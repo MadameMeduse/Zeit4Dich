@@ -196,7 +196,7 @@ export default function MassagePage({
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-32 sm:pt-36 lg:pt-40 pb-16 px-4 sm:px-6 lg:px-8">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="wait">
+          <AnimatePresence >
             <motion.div key={currentImageIndex} className="w-full h-full" style={{
             backgroundImage: `url(${heroImages[currentImageIndex]})`,
             backgroundSize: 'cover',
@@ -371,8 +371,12 @@ export default function MassagePage({
           <motion.h3 {...fadeInUp} className="font-['Playfair_Display'] text-3xl sm:text-4xl text-[#4A4440] font-light mb-6 text-center">
             Mein Angebot
           </motion.h3>
+          <motion.p {...fadeInUp} className="text-center text-[#6B6560] font-['Montserrat'] text-lg mb-12 max-w-2xl mx-auto">Wer sich heute was Gutes tut, hat morgen eine schöne Vergangenheit.
+          </motion.p>
           
           <motion.p {...fadeInUp} className="text-center text-[#6B6560] font-['Montserrat'] text-lg mb-12 max-w-2xl mx-auto">Von sanften Verwöhnmassagen mit Aromaöl oder heissen Lava-Steinen über spezifische Kopf- und Fussbehandlungen bis hin zu Deep-Tissue-Rücken-Intensivmassagen</motion.p>
+          
+
 
           {/* Consolidated Service Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -657,10 +661,11 @@ export default function MassagePage({
           <div className="bg-gradient-to-br from-[#4d83a4]/5 to-[#F5F3EF] rounded-3xl p-8 sm:p-12 border border-[#4d83a4]/20 shadow-lg text-center">
             <Heart className="w-12 h-12 text-[#4d83a4] mx-auto mb-4" />
             <h4 className="font-['Playfair_Display'] text-2xl sm:text-3xl font-light text-[#4A4440] mb-4">
-              Kombiniere Massage & Atem
+            Geführte Atemreise
             </h4>
             <p className="text-lg text-[#6B6560] font-['Montserrat'] mb-6">
-              Erlebe die kraftvolle Verbindung von achtsamer Berührung und bewusstem Atem.
+            Nach der UR-ATEM© Methode 
+Blockaden lösen. Energie entfalten. Du sein.
             </p>
             <button onClick={() => handleNavigate('atem')} className="inline-flex items-center gap-2 px-8 py-3 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 font-['Montserrat'] font-medium shadow-lg hover:shadow-xl">
               Zur Atem-Seite

@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 interface AtemPreviewSectionProps {
   onNavigate: (page: 'home' | 'about' | 'events' | 'contact' | 'atem' | 'massage' | 'inspiration', anchor?: string) => void;
@@ -16,36 +14,29 @@ interface AtemPreviewSectionProps {
 export const AtemPreviewSection: React.FC<AtemPreviewSectionProps> = ({
   onNavigate
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  return <section id="atem-preview" className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba] border-y-4 border-[#faf8f6]">
+  return <section id="atem-preview" className="py-20 sm:py-28 lg:py-26 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba] border-y-4 border-[#faf8f6]">
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{
         opacity: 0,
-        x: isMobile ? 0 : -30
+        x: -30
       }} whileInView={{
         opacity: 1,
         x: 0
       }} transition={{
-        duration: isMobile ? 0.2 : 0.8
+        duration: 0.8
       }} viewport={{
         once: true
-      }} className="flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-20 items-center">
+      }} className="flex flex-col space-y-6 sm:space-y-8">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white font-light leading-tight font-['Playfair_Display']" style={{
           fontStyle: "normal",
           fontWeight: "700",
-          fontSize: 'clamp(32px, 5vw, 60px)',
+          fontSize: 'clamp(32px, 5.5vw, 70px)',
           lineHeight: '1.3',
           overflowWrap: 'break-word',
-          paddingTop: "20px",
-          paddingBottom: "20px",
-          paddingRight: "0px",
-          paddingLeft: "15px"
+          paddingLeft: "15px",
+          paddingRight: "15px",
+          alignSelf: "center",
+          paddingBottom: "4vw",
         }}>
             ATEM
           </h2>
@@ -71,7 +62,7 @@ export const AtemPreviewSection: React.FC<AtemPreviewSectionProps> = ({
             </figure>
 
             {/* Text Content - Single Column Layout */}
-            <div className="flex flex-col space-y-6 lg:flex-1 justify-center">
+            <div className="flex flex-col space-y-6 lg:flex-1 justify-center items-center md:items-start">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-tight font-['Playfair_Display']" style={{
               fontSize: 'clamp(26px, 3.5vw, 40px)',
               lineHeight: '1.35',

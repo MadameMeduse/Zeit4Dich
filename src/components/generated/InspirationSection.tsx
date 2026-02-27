@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-type CategoryType = 'meditationen' | 'diy-praktiken' | 'blog';
+type CategoryType = 'meditationen' | 'lifestyle' | 'blog';
 interface Article {
   id: string;
   title: string;
@@ -36,7 +36,7 @@ export const InspirationSection: React.FC = () => {
     id: 'd1',
     title: 'Wasser-Detox-Ritual',
     excerpt: 'Ein einfaches, wirkungsvolles Do-It-Yourself-Ritual für zuhause – Detox mit Wasser, Affirmationen und bewusster Intention.',
-    category: 'diy-praktiken',
+    category: 'lifestyle',
     date: '20. Dez 2025',
     thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop'
   }, {
@@ -62,7 +62,7 @@ export const InspirationSection: React.FC = () => {
   const getCategoryLabel = (category: CategoryType): string => {
     const labels = {
       'meditationen': 'Meditationen',
-      'diy-praktiken': 'DIY-Praktiken',
+      'lifestyle': 'Lifestyle',
       'blog': 'Blog'
     };
     return labels[category];
@@ -148,7 +148,7 @@ export const InspirationSection: React.FC = () => {
             </button>
 
             {/* Desktop Grid with Transform Transition */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden p-2">
               <div className="grid grid-cols-3 gap-6 lg:gap-8 xl:gap-10 transition-transform duration-500 ease-out" style={{
               transform: `translateX(-${currentIndex * (100 / desktopCardsToShow)}%)`
             }}>

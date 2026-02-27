@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Add this line:
+  base: '/Zeit4Dich/', 
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

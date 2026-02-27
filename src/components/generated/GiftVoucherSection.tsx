@@ -31,8 +31,35 @@ export default function GiftVoucherSection({
       onNavigate('contact');
     }
   };
-  return <section id="gift-voucher" className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-[#C9C4BA]">
-      <div className="max-w-7xl mx-auto">
+  return <section id="gift-voucher" className="py-20 sm:py-28 lg:py-26 px-4 sm:px-6 lg:px-8 bg-[#C9C4BA]">
+      <div className="max-w-7xl mx-auto pb-10">
+      
+        <motion.div initial={{
+        opacity: 0,
+        x: -30
+      }} whileInView={{
+        opacity: 1,
+        x: 0
+      }} transition={{
+        duration: 0.8
+      }} viewport={{
+        once: true
+      }} className="flex flex-col space-y-6 sm:space-y-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white font-light leading-tight font-['Playfair_Display']" style={{
+          fontStyle: "normal",
+          fontWeight: "700",
+          fontSize: 'clamp(32px, 5.5vw, 70px)',
+          lineHeight: '1.3',
+          overflowWrap: 'break-word',
+          paddingLeft: "15px",
+          paddingRight: "15px",
+          alignSelf: "center",
+          paddingBottom: "4vw",
+          marginBottom: "4vw",
+        }}>
+            Geschenkgutschein
+          </h2>
+          </motion.div>
         {/* Split-screen layout: Image left, Content right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
@@ -108,9 +135,9 @@ export default function GiftVoucherSection({
           once: true
         }} className="flex flex-col justify-center space-y-6 sm:space-y-8 lg:pl-8">
             {/* Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white font-light leading-tight font-['Playfair_Display']">
-              Auf der Suche nach dem perfekten Geschenk?
-            </h2>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl text-white font-light leading-tight font-['Playfair_Display']">
+            Auf der Suche nach dem perfekten Geschenk?
+            </h3>
 
             {/* Body Text */}
             <div className="space-y-4">

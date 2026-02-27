@@ -30,7 +30,7 @@ const EVENT_DATA: Event[] = [{
   fullDescription: 'An jedem letzten Montag im Monat treffen wir uns im geschützten Kreis, um gemeinsam zur Ruhe zu kommen, uns auszutauschen und innere Stabilität zu kultivieren.',
   details: ['Wir treffen uns einmal im Monat im GfK Seminarraum des Vereins Giraffen.Schule um im geschützten Kreis anzukommen, uns auszutauschen und gemeinsam zur Ruhe zu kommen.', 'Mit Atemübungen, Entspannungstechniken und Affirmationen stärkst Du deine innere Stabilität und nimmst mehr Ruhe mit in deinen Alltag.', 'In einer vertrauensvollen Atmosphäre findest Du Raum für Dich selbst – zum Ankommen, zum Loslassen und zum bewussten Durchatmen.', 'Die Abende sind für alle offen, die mehr Achtsamkeit in ihren Alltag integrieren möchten. Keine Vorkenntnisse erforderlich.'],
   contactInfo: 'Mehr Infos gerne auf Anfrage per E-Mail.',
-  imageSrc: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=85',
+  imageSrc: 'images/Gruppe_Abende.jpg',
   imageAlt: 'Atem-Abende in der Gruppe - Gruppentreffen für bewusstes Atmen'
 }, {
   id: 'retreat-2026',
@@ -80,16 +80,16 @@ const EventNavigationCard: React.FC<{
     duration: 0.6,
     delay: index * 0.1
   }} onClick={onClick} className="relative overflow-hidden rounded-2xl cursor-pointer group shadow-lg hover:shadow-2xl transition-all duration-500" style={{
-    aspectRatio: '3/2'
+    aspectRatio: '2/2'
   }}>
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img id={imageId} src={event.imageSrc} alt={event.imageAlt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+        <img id={imageId} src={event.imageSrc} alt={event.imageAlt} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 " />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       </div>
 
       {/* Info Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 text-white">
+      <div className="absolute inset-0 flex flex-col justify-center p-6 lg:p-5 text-white">
         <h3 className="text-xl lg:text-2xl font-light leading-tight font-['Playfair_Display'] mb-3">
           {event.title}
         </h3>
@@ -107,7 +107,7 @@ const EventNavigationCard: React.FC<{
         </div>
 
         {/* Hover Indicator */}
-        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="mt-3 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-white font-['Montserrat',_sans-serif] font-semibold text-sm border-b-2 border-white pb-1">
             Details anzeigen →
           </span>
@@ -298,7 +298,7 @@ export default function EventsPage({
         </motion.div>
 
         {/* MIDDLE: Active Event Detail */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence >
           <motion.div key={activeEvent.id} initial={{
           opacity: 0
         }} animate={{

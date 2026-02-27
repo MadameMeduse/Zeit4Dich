@@ -260,8 +260,8 @@ export default function AtemPage({
             hyphens: 'auto',
             padding: '0 15px'
           }}>
-              Bewusst Atmen – bewusst Sein:<br />
-              Die UR-ATEM© Methode
+              Blockaden lösen. Energie entfalten. Du sein.<br />
+              Nach der UR-ATEM© Methode
             </h1>
             
             <div className="w-24 h-px bg-[#4d83a4]/30 mx-auto mb-8"></div>
@@ -273,7 +273,7 @@ export default function AtemPage({
             hyphens: 'auto',
             padding: '0 15px'
           }}>
-              Zurück zum Ursprung – Zurück zu Dir
+              Zurück zum Ursprung - Zurück zu Dir
             </h2>
             
             <p className="font-['Montserrat'] text-lg sm:text-xl text-[#4A4440] max-w-3xl mx-auto leading-relaxed mb-12">
@@ -348,8 +348,8 @@ export default function AtemPage({
             duration: isMobile ? 0.2 : 0.6,
             delay: isMobile ? 0 : 0.1
           }} className="bg-white rounded-2xl p-8 shadow-lg border border-[#4d83a4]/20 hover:shadow-xl transition-all duration-300 flex flex-col">
-              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Atme frei. Lebe klar.</h4>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Tipps & Tricks für den Alltag.<br /><br /></p>
+              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Atemcoaching, Erwachsene</h4>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Atme frei. Lebe klar. Tipps & Tricks für den Alltag.</p>
               <div className="text-center mb-4">
                 <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">126 CHF</p>
                 <p className="text-sm text-[#6B6560] font-['Montserrat']">90 Min.</p>
@@ -447,7 +447,8 @@ export default function AtemPage({
               
               <p style={{
               textAlign: "center"
-            }}>Diese von mir entwickelte, ganzheitliche Methode basiert auf bewusst geführten körperlich-energetischen Atemreisen in Verbindung mit Alpha-Level-Visualmeditationen. In diesem Prozess reguliert sich dein Nervensystem, Blockaden beginnen zu lösen, und alte Glaubens- und Verhaltensmuster können sanft neu ausgerichtet werden. Du spürst sofort mehr Klarheit, Lebensenergie und eine kraftvolle Verbindung zu deinem wahren Selbst. </p>
+            }}>Diese von mir entwickelte, ganzheitliche Methode basiert auf bewusst geführten körperlich-energetischen Atemreisen in Verbindung mit Alpha-Level-Visualmeditationen. In diesem Prozess reguliert sich dein Nervensystem, Blockaden beginnen zu lösen, und alte Glaubens- und Verhaltensmuster können sanft neu ausgerichtet werden. Du spürst sofort mehr Klarheit, Lebensenergie und eine kraftvolle Verbindung zu deinem wahren Selbst.  </p>      <p className="text-xl font-medium text-center text-[#4A4440] italic">Dein Atem. Deine Energie. Dein Leben
+          </p>
             </div>
 
             {/* Methodology Section */}
@@ -463,10 +464,10 @@ export default function AtemPage({
                   }}>Rebirthing</span>-Techniken</>
               }, {
                 icon: Heart,
-                label: 'Körperarbeit & Massage'
+                label: 'Körperarbeit'
               }, {
                 icon: Sparkles,
-                label: 'Affirmationen & Visualisierungen'
+                label: 'Alpha-Level-Visualmeditationen'
               }].map((item, index) => <motion.div key={index} initial={{
                 opacity: 0,
                 y: isMobile ? 10 : 20
@@ -754,37 +755,6 @@ export default function AtemPage({
                           </motion.button>}
                       </>;
               })()}
-
-                  {/* Benefits as bullet points */}
-                  {service.benefits && <ul className="space-y-3">
-                      {service.benefits.map((benefit, i) => <li key={i} className="flex items-start gap-3">
-                          <span className="text-[#4d83a4] font-bold text-xl flex-shrink-0 mt-1">•</span>
-                          <span>{benefit}</span>
-                        </li>)}
-                    </ul>}
-
-                  {/* Documents Section */}
-                  {service.hasDocuments && <div className="mt-8 bg-[#4d83a4]/5 rounded-2xl p-6 border border-[#4d83a4]/20" style={{
-                display: "none"
-              }}>
-                      <h4 className="font-['Playfair_Display'] text-xl font-semibold text-[#4A4440] mb-4">
-                        Dokumente für dich:
-                      </h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-center gap-3">
-                          <Download className="w-5 h-5 text-[#4d83a4] flex-shrink-0" />
-                          <a href="#" className="text-[#4d83a4] hover:underline font-semibold">
-                            VORHER: Check-Liste für deine erste Atemreise
-                          </a>
-                        </li>
-                        <li className="flex items-center gap-3">
-                          <Download className="w-5 h-5 text-[#4d83a4] flex-shrink-0" />
-                          <a href="#" className="text-[#4d83a4] hover:underline font-semibold">
-                            NACHHER: Integrations-Fragebogen nach der Atemreise
-                          </a>
-                        </li>
-                      </ul>
-                    </div>}
                 </div>
 
                 {/* CTA */}

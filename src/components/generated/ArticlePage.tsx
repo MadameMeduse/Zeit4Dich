@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Share2, Mail } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 type PageType = 'home' | 'about' | 'events' | 'contact' | 'atem' | 'massage' | 'inspiration';
-type CategoryType = 'meditationen' | 'diy-praktiken' | 'blog';
+type CategoryType = 'meditationen' | 'lifestyle' | 'blog';
 interface ArticleData {
   id: string;
   title: string;
@@ -190,7 +190,7 @@ export default function ArticlePage({
       thumbnail: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=800&h=600&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=1920&h=1080&fit=crop'
     },
-    // DIY-Praktiken
+    // lifestyle
     'd1': {
       id: 'd1',
       title: 'Wasser-Detox-Ritual',
@@ -267,8 +267,8 @@ export default function ArticlePage({
 
         <p><strong>🌿 Mach es einfach. Mach es regelmäßig. Mach es zu deinem Moment.</strong></p>
       `,
-      category: 'diy-praktiken',
-      categoryLabel: 'DIY-Praktiken',
+      category: 'lifestyle',
+      categoryLabel: 'Lifestyle',
       date: '20. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&h=1080&fit=crop'
@@ -317,8 +317,8 @@ export default function ArticlePage({
 
         <p>Diese kurze Übung kannst du im Privatleben in Konflikten und Unklarheiten zwischen Familienmitgliedern oder auch im beruflichen Atmosphäre jederzeit einsetzen. Wenn du das regularly übst, wird deine Ruhe und Präsenz zum Standard-Signal, das automatisch Einfluss nimmt – ohne dass du kämpfen musst. Konflikte verlieren an Schwere, Flüsse von Energie in dir werden sanft reguliert.</p>
       `,
-      category: 'diy-praktiken',
-      categoryLabel: 'DIY-Praktiken',
+      category: 'lifestyle',
+      categoryLabel: 'Lifestyle',
       date: '17. Dez 2025',
       thumbnail: 'https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/6f5dc41f-50e9-4e96-a8c9-c58dfed44cfd.png',
       heroImage: 'https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/6f5dc41f-50e9-4e96-a8c9-c58dfed44cfd.png'
@@ -548,8 +548,8 @@ export default function ArticlePage({
 
         <p><strong>🌿 Mach es einfach. Mach es regelmäßig. Mach es zu deinem Moment.</strong></p>
       `,
-      category: 'diy-praktiken',
-      categoryLabel: 'DIY-Praktiken',
+      category: 'lifestyle',
+      categoryLabel: 'lifestyle',
       date: '14. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=800&h=600&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=1920&h=1080&fit=crop'
@@ -589,8 +589,8 @@ export default function ArticlePage({
 
         <p>Du kannst dich auch selbst räuchern – führe den Rauch um deinen Körper herum, von den Füßen bis zum Kopf.</p>
       `,
-      category: 'diy-praktiken',
-      categoryLabel: 'DIY-Praktiken',
+      category: 'lifestyle',
+      categoryLabel: 'lifestyle',
       date: '11. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=800&h=600&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=1920&h=1080&fit=crop'
@@ -628,8 +628,8 @@ export default function ArticlePage({
 
         <p>Praktiziere Erdung täglich, besonders wenn du dich überfordert, ängstlich oder "neben dir" fühlst.</p>
       `,
-      category: 'diy-praktiken',
-      categoryLabel: 'DIY-Praktiken',
+      category: 'lifestyle',
+      categoryLabel: 'lifestyle',
       date: '8. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&h=1080&fit=crop'
@@ -671,8 +671,8 @@ export default function ArticlePage({
 
         <p>Dein Morgen-Ritual ist nicht verhandelbar. Es ist deine heilige Zeit, deine Investition in dich selbst.</p>
       `,
-      category: 'diy-praktiken',
-      categoryLabel: 'DIY-Praktiken',
+      category: 'lifestyle',
+      categoryLabel: 'lifestyle',
       date: '5. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=800&h=600&fit=crop',
       heroImage: 'https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=1920&h=1080&fit=crop'

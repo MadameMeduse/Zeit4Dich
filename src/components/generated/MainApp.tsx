@@ -11,7 +11,7 @@ import KontaktPage from './KontaktPage';
 import ArticlePage from './ArticlePage';
 import { ScrollToTop } from './ScrollToTop';
 type PageType = 'home' | 'about' | 'events' | 'contact' | 'atem' | 'massage' | 'inspiration';
-type CategoryType = 'meditationen' | 'diy-praktiken' | 'blog';
+type CategoryType = 'meditationen' | 'lifestyle' | 'blog';
 
 /**
  * MainApp Component
@@ -27,7 +27,7 @@ type CategoryType = 'meditationen' | 'diy-praktiken' | 'blog';
  * Each component can be edited independently on the canvas.
  */
 export default function MainApp() {
-  const [currentPage, setCurrentPage] = useState<PageType>('atem');
+  const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [currentArticle, setCurrentArticle] = useState<{
     id: string;

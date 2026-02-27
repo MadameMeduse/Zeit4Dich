@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 type PageType = 'home' | 'about' | 'events' | 'contact' | 'atem' | 'massage' | 'inspiration';
-type CategoryType = 'meditationen' | 'diy-praktiken' | 'blog';
+type CategoryType = 'meditationen' | 'lifestyle' | 'blog';
 interface Article {
   id: string;
   title: string;
@@ -62,28 +62,28 @@ export default function InspirationPage({
         thumbnail: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=800&h=600&fit=crop'
       }]
     },
-    'diy-praktiken': {
-      title: 'DIY-Praktiken',
-      description: 'Do-it-yourself-Praktiken & Lifestyle-Tipps – einfache, alltagstaugliche Übungen, Rituale und Tricks, die dich erden, schützen, dir Klarheit verschaffen und deinen Tag bereichern. Z.B. Wasser-Detox-Ritual, Gesprächs-Magnet, Realitätsgestaltung, Heilkräuter-Ritual und weitere inspirierende Praktiken.',
+    'lifestyle': {
+      title: 'Lifestyle',
+      description: 'Lifestyle Tipps & Do-it-yourself Praktiken -  einfache, alltagstaugliche Übungen, Rituale und Tricks, die dich erden, schützen, dir Klarheit verschaffen und deinen Tag bereichern. Z.B. Wasser-Detox-Ritual, Gesprächs-Magnet, Realitätsgestaltung, Heilkräuter-Ritual und weitere inspirierende Praktiken.',
       articles: [{
         id: 'd1',
         title: 'Wasser-Detox-Ritual',
         excerpt: 'Ein einfaches, wirkungsvolles Do-It-Yourself-Ritual für zuhause – Detox mit Wasser, Affirmationen und bewusster Intention.',
-        category: 'diy-praktiken' as CategoryType,
+        category: 'lifestyle' as CategoryType,
         date: '20. Dez 2025',
         thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop'
       }, {
         id: 'd2',
         title: 'Gesprächs-Magnet',
         excerpt: 'Lerne, wie du dein Bewusstseins-Energiefeld nutzt, um wichtige Gespräche vorzuprogrammieren. Erziele dein gewünschtes Outcome durch innere Ruhe und klare Intention.',
-        category: 'diy-praktiken' as CategoryType,
+        category: 'lifestyle' as CategoryType,
         date: '17. Dez 2025',
-        thumbnail: 'https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/6f5dc41f-50e9-4e96-a8c9-c58dfed44cfd.png'
+        thumbnail: 'https://media.istockphoto.com/id/1050287390/photo/businesswoman-and-businessman-hr-manager-interviewing-woman.jpg?s=612x612&w=0&k=20&c=dRUcgzI-tdZIzbl-ezMitdmgyuYlpT0ncfcOCZBLL9k=' 
       }, {
         id: 'd3',
         title: 'Realitätsgestaltung',
         excerpt: 'Erfahre, wie du dein Leben als Resonanzfeld gestaltest. Durch die Verbindung von Atemarbeit und schöpferischer Manifestation programmierst du deine Vision direkt in dein Energiefeld.',
-        category: 'diy-praktiken' as CategoryType,
+        category: 'lifestyle' as CategoryType,
         date: '14. Dez 2025',
         thumbnail: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&h=600&fit=crop'
       }]
@@ -198,7 +198,7 @@ export default function InspirationPage({
             <p className="text-sm sm:text-base lg:text-lg font-light leading-relaxed font-['Montserrat']" style={{
             display: "none"
           }}>
-              Alle Inhalte sind übersichtlich in drei Bereiche gegliedert: Meditationen, DIY-Praktiken und Blog – 
+              Alle Inhalte sind übersichtlich in drei Bereiche gegliedert: Meditationen, lifestyle und Blog – 
               so findest du schnell, was dich gerade am meisten anspricht.
             </p>
 
@@ -267,7 +267,7 @@ export default function InspirationPage({
         </motion.div>
 
         {/* Category Description */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div key={activeCategory} initial={{
           opacity: 0,
           y: 10
@@ -307,7 +307,7 @@ export default function InspirationPage({
         </AnimatePresence>
 
         {/* Articles Grid */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div key={activeCategory} initial={{
           opacity: 0,
           y: 20
@@ -342,7 +342,7 @@ export default function InspirationPage({
 
                   {/* Thumbnail Image with Title Overlay */}
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <img src={article.thumbnail} alt={article.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" />
+                    <img src={article.thumbnail} alt={article.title} className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110" loading="lazy" />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                     {/* Title Overlay */}
@@ -396,7 +396,7 @@ export default function InspirationPage({
             <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm lg:text-base font-['Montserrat']">
               <button onClick={() => setActiveCategory('meditationen')} className="text-[#4d83a4] hover:text-[#3d6a85] transition-colors underline underline-offset-4 font-medium">Meditationen</button>
               <span className="text-[#4d83a4]/40">|</span>
-              <button onClick={() => setActiveCategory('diy-praktiken')} className="text-[#4d83a4] hover:text-[#3d6a85] transition-colors underline underline-offset-4 font-medium">DIY-Praktiken</button>
+              <button onClick={() => setActiveCategory('lifestyle')} className="text-[#4d83a4] hover:text-[#3d6a85] transition-colors underline underline-offset-4 font-medium">lifestyle</button>
               <span className="text-[#4d83a4]/40">|</span>
               <button onClick={() => setActiveCategory('blog')} className="text-[#4d83a4] hover:text-[#3d6a85] transition-colors underline underline-offset-4 font-medium">
                 Blog
