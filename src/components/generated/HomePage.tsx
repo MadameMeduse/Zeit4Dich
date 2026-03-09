@@ -32,7 +32,7 @@ export default function HomePage({
       <GiftVoucherSection onNavigate={onNavigate || (() => {})} />
       <EventsPreviewSection onNavigate={onNavigate || (() => {})} />
       <InspirationSection />
-      <TestimonialsSection />
+      <TestimonialsSection  />
       <NewsletterHero onNavigate={onNavigate || (() => {})} />
       <ClosingCTA onNavigate={onNavigate || (() => {})} />
     </div>;

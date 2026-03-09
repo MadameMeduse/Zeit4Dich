@@ -1,5 +1,5 @@
 import React from 'react';
-const Logo = () => <img width="80" height="80" src="https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/3d1b8e0c-5ac6-45de-808f-dc695dbdfb35.png" alt="Zeit Für Dich Logo" className="w-16 h-16 sm:w-20 sm:h-20" style={{
+const Logo = () => <img width="80" height="80" src="/images/Zeit4Dich_Logo.png" alt="Zeit Für Dich Logo" className="w-16 h-16 sm:w-20 sm:h-20" style={{
   objectFit: "contain",
   objectPosition: "50% 50%",
   opacity: "1"
@@ -41,12 +41,9 @@ export default function FooterComponent({
             {/* Brand */}
             <div className="flex flex-col space-y-2 sm:space-y-3">
               <Logo />
-              <img src="https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/4d76db76-4ca9-49d9-b249-ff1741a236dc.png" alt="Zeit Für Dich" className="w-auto h-8 sm:h-10" style={{
-              objectFit: "contain",
-              objectPosition: "left",
-              opacity: "1"
-            }} />
-              <p className="text-white/80 text-sm leading-relaxed font-['Montserrat',_sans-serif] font-semibold">UR-ATEM© Methode<br />Atemsessions & Massagen<br />Atmen, Berührung und Präsenz – für deine innere Rückkehr nach Hause.<br /></p>
+
+              <p className="text-white/80 text-sm leading-relaxed font-['Montserrat',_sans-serif] font-semibold">Die UR-ATEM© Methode<br />Massage- & Atempraxis
+              <br />Atmen, Berührung und Präsenz – für deine innere Rückkehr nach Hause.<br /></p>
             </div>
 
             {/* Navigation */}
@@ -96,33 +93,29 @@ export default function FooterComponent({
               <h3 className="text-lg sm:text-xl text-white font-light mb-2 border-b border-white/20 pb-3 font-['Playfair_Display']">
                 Kontakt
               </h3>
-              <address className="flex flex-col space-y-3 sm:space-y-4 text-white/90 text-sm sm:text-base font-['Montserrat',_sans-serif] font-semibold not-italic">
-                <div className="space-y-1">
-                  <p className="text-white font-medium">Tina Christina Tomson</p>
-                  <p className="text-white/80 text-sm" style={{
-                  display: "none"
-                }}>Atemsessions & Massagen</p>
-                  <p className="text-white/80 text-sm" style={{
-                  display: "none"
-                }}>UR-ATEM© Methode</p>
-                </div>
-                <div className="space-y-1 pt-2" style={{
-                paddingTop: "0px",
-                paddingLeft: "0px"
-              }}>
-                  <p>Staatsstrasse 24a,</p>
-                  <p>9437 Marbach,</p>
-                  <p>St.Gallen, Schweiz</p>
-                </div>
-                <div className="space-y-2 pt-2">
-                  <a href="tel:+41764082442" className="hover:text-white transition-colors duration-300 block">
-                    Mobil: +41 76 408 2442
-                  </a>
-                  <a href="mailto:info@zeit4dich.ch" className="hover:text-white transition-colors duration-300 block">
-                    E-Mail: info@zeit4dich.ch
-                  </a>
-                </div>
-              </address>
+              <address className="flex flex-col space-y-3 sm:space-y-4 text-white/90 text-base font-['Montserrat',_sans-serif] font-semibold not-italic">
+  {/* Primary Contact Name */}
+  <div>
+    <p className="text-white">Tina Christina Tomson</p>
+  </div>
+
+  {/* Contact Methods */}
+  <div className="flex flex-col space-y-2">
+    <a href="tel:+41764082442" className="hover:text-white transition-colors duration-300">
+      Mobil: +41 76 408 24 42
+    </a>
+    <a href="mailto:info@zeit4dich.ch" className="hover:text-white transition-colors duration-300">
+      E-Mail: info@zeit4dich.ch
+    </a>
+  </div>
+
+  {/* Physical Address */}
+  <div className="flex flex-col space-y-1">
+    <p>Balgacherstrasse 202</p>
+    <p>9435 Heerbrugg SG</p>
+    <p>Schweiz</p>
+  </div>
+</address>
             </div>
           </div>
 

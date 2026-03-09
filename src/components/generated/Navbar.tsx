@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-const Logo = () => <img width="80" height="80" src="https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/05ad0275-f47b-4ca8-b2a1-4c63d23cee6f.png" alt="Zeit Für Dich Logo" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" style={{
+const Logo = () => <img width="80" height="80" src="/images/Zeit4Dich_Logo.png" alt="Zeit Für Dich Logo" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" style={{
   objectFit: "contain",
   objectPosition: "50% 50%",
   opacity: "1"

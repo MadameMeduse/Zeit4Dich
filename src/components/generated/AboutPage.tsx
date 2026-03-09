@@ -313,7 +313,7 @@ Lena-Kristina Tuulse's Joy Of Life School of Rebirthing & Breathwork            
           </div>
 
           <div className="order-2 lg:order-1">
-            <img src="public/images/Tina_riding_horse.jpg" alt="Pferde in nordischer Natur" className="rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover" style={{
+            <img src="/images/Tina_riding_horse.jpg" alt="Pferde in nordischer Natur" className="rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover" style={{
               objectFit: "cover",
               objectPosition: "50% 50%",
               opacity: "1"
