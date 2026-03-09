@@ -69,8 +69,8 @@ export default function ArticlePage({
       category: 'meditationen',
       categoryLabel: 'Meditationen',
       date: '21. Dez 2025',
-      thumbnail: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&h=1080&fit=crop'
+      thumbnail: 'images/innerlight.webp',
+      heroImage: 'images/innerlight.webp'
     },
     'm2': {
       id: 'm2',
@@ -137,8 +137,8 @@ export default function ArticlePage({
       category: 'meditationen',
       categoryLabel: 'Meditationen',
       date: '18. Dez 2025',
-      thumbnail: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=1920&h=1080&fit=crop'
+      thumbnail: 'images/boundaries.webp',
+      heroImage: 'images/boundaries.webp'
     },
     'm3': {
       id: 'm3',
@@ -187,8 +187,8 @@ export default function ArticlePage({
       category: 'meditationen',
       categoryLabel: 'Meditationen',
       date: '15. Dez 2025',
-      thumbnail: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=1920&h=1080&fit=crop'
+      thumbnail: 'images/creative2.webp',
+      heroImage: 'images/creative2.webp'
     },
     // lifestyle
     'd1': {
@@ -321,7 +321,7 @@ export default function ArticlePage({
       categoryLabel: 'Lifestyle',
       date: '17. Dez 2025',
       thumbnail: 'https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/6f5dc41f-50e9-4e96-a8c9-c58dfed44cfd.png',
-      heroImage: 'https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/6f5dc41f-50e9-4e96-a8c9-c58dfed44cfd.png'
+      heroImage: 'https://media.istockphoto.com/id/1050287390/photo/businesswoman-and-businessman-hr-manager-interviewing-woman.jpg?s=612x612&w=0&k=20&c=dRUcgzI-tdZIzbl-ezMitdmgyuYlpT0ncfcOCZBLL9k='
     },
     // Blog
     'b1': {
@@ -357,7 +357,7 @@ export default function ArticlePage({
       categoryLabel: 'Blog',
       date: '19. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1920&h=1080&fit=crop'
+      heroImage: 'images/arrive.webp'
     },
     'b2': {
       id: 'b2',
@@ -401,7 +401,7 @@ export default function ArticlePage({
       categoryLabel: 'Blog',
       date: '16. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&h=1080&fit=crop'
+      heroImage: 'images/selfcare.webp'
     },
     'm4': {
       id: 'm4',
@@ -552,7 +552,7 @@ export default function ArticlePage({
       categoryLabel: 'lifestyle',
       date: '14. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=1920&h=1080&fit=crop'
+      heroImage: 'images/reality.png'
     },
     'd4': {
       id: 'd4',
@@ -593,7 +593,7 @@ export default function ArticlePage({
       categoryLabel: 'lifestyle',
       date: '11. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1512069593355-5b1f2f0ad6af?w=1920&h=1080&fit=crop'
+      heroImage: 'images/herbal.png'
     },
     'd5': {
       id: 'd5',
@@ -714,7 +714,7 @@ export default function ArticlePage({
       categoryLabel: 'Blog',
       date: '13. Dez 2025',
       thumbnail: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop',
-      heroImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&h=1080&fit=crop'
+      heroImage: 'images/ancor.webp'
     },
     'b4': {
       id: 'b4',
@@ -936,7 +936,7 @@ export default function ArticlePage({
       <section className="relative min-h-[70vh] sm:min-h-[75vh] flex items-end overflow-hidden pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img src={article.heroImage} alt={article.title} className="w-full h-full max-h-[70vh] md:max-h-none object-cover" style={{
+          <img src={article.heroImage} alt={article.title} className="w-full h-full max-h-[70vh] md:max-h-none object-cover object-top" style={{
           filter: 'sepia(0.15) saturate(0.8)'
         }} loading="eager" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-[#F5F3EF]/90" />

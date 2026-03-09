@@ -45,21 +45,21 @@ export default function InspirationPage({
         excerpt: 'Diese Meditation ist eine Erinnerung an dein eigenes Licht – sie führt dich in dein eigenes Lichtfeld, in dem Körper, Bewusstsein und Lebensenergie miteinander schwingen.',
         category: 'meditationen' as CategoryType,
         date: '21. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop'
+        thumbnail: 'images/innerlight.webp'
       }, {
         id: 'm2',
         title: 'Feld-Reset',
         excerpt: 'Eine klare Schritt-für-Schritt-Meditation für einen regelmäßigen Feld-Reset mit Fokus auf Atem, Schutz und bewusste Energieabgrenzung.',
         category: 'meditationen' as CategoryType,
         date: '18. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=800&h=600&fit=crop'
+        thumbnail: 'images/boundaries.webp'
       }, {
         id: 'm3',
         title: 'Zurück in die Mitte',
         excerpt: 'Erinnerung an dein schöpferisches Selbst – eine kleine Praxis, um in die Stille zurückzukehren und dich zu erinnern, wer du bist.',
         category: 'meditationen' as CategoryType,
         date: '15. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=800&h=600&fit=crop'
+        thumbnail: 'images/creative2.webp'
       }]
     },
     'lifestyle': {
@@ -71,7 +71,7 @@ export default function InspirationPage({
         excerpt: 'Ein einfaches, wirkungsvolles Do-It-Yourself-Ritual für zuhause – Detox mit Wasser, Affirmationen und bewusster Intention.',
         category: 'lifestyle' as CategoryType,
         date: '20. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop'
+        thumbnail: 'images/wasserdetox.webp'
       }, {
         id: 'd2',
         title: 'Gesprächs-Magnet',
@@ -85,7 +85,7 @@ export default function InspirationPage({
         excerpt: 'Erfahre, wie du dein Leben als Resonanzfeld gestaltest. Durch die Verbindung von Atemarbeit und schöpferischer Manifestation programmierst du deine Vision direkt in dein Energiefeld.',
         category: 'lifestyle' as CategoryType,
         date: '14. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&h=600&fit=crop'
+        thumbnail: 'images/reality.png'
       }]
     },
     blog: {
@@ -97,21 +97,21 @@ export default function InspirationPage({
         excerpt: 'Gedanken darüber, wie wir im Hier und Jetzt wirklich ankommen können und präsent sein.',
         category: 'blog' as CategoryType,
         date: '19. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=600&fit=crop'
+        thumbnail: 'images/arrive.webp'
       }, {
         id: 'b2',
         title: 'Warum Selbstfürsorge kein Luxus ist',
         excerpt: 'Ein persönlicher Brief über die Notwendigkeit, gut für sich selbst zu sorgen und achtsam zu sein.',
         category: 'blog' as CategoryType,
         date: '16. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop'
+        thumbnail: 'images/selfcare.webp'
       }, {
         id: 'b3',
         title: 'Der Atem als Anker',
         excerpt: 'Wie bewusstes Atmen uns durch herausfordernde Zeiten trägt und stabilisiert.',
         category: 'blog' as CategoryType,
         date: '13. Dez 2025',
-        thumbnail: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop'
+        thumbnail: 'images/ancor.webp'
       }]
     }
   };

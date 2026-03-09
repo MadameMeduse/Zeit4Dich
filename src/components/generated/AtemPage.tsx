@@ -35,15 +35,15 @@ export default function AtemPage({
   // Service data in new order
   const services = [{
     id: 'ur-atem-detail',
-    title: 'Eine geführte Atemsession nach der UR-ATEM@ Methode',
+    title: 'Eine geführte Atemsession nach die UR-ATEM@ Methode',
     price: '180–225 CHF',
     duration: 'Variabel',
     subtitle: 'Tiefgehend und transformierend – ca 2 Stunden, im Liegen, mit Fokus auf Erleben',
-    image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&h=600&fit=crop',
+    image: 'images/Uratem.webp',
     imageAlt: 'Person lying down comfortably in serene setting',
     ctaText: 'Deinen UR-ATEM© Prozess Starten',
     isFeatured: true,
-    description: ['Der UR-ATEM© Prozess inklusive die wundersame <span style="font-style: italic;">Rebirthing</span>-Atemreise findet unter meiner Führung und Begleitung in einem pri­vaten, geschützten Rahmen statt. Es ist eine intensive, erholsame und transformierende Erfahrung, die Dich Blockaden loslassen, innere Ruhe finden und neue Lebendigkeit spüren lässt.', 'Während der Atemreise nutzen wir die <span style="font-style: italic;">Rebirthing</span>-Atemtechnik, um wieder voll und frei atmen zu können. Es beginnt mit einem ausführlichen Erstgespräch (ca. 45 Minuten). Die geführte Atemreise selbst dauert 1–1,5 Stunden, wobei die Zeit oft wie im Flug vergeht.', 'Das fördert Entspannung und kann lange unterdrückte, schmerzhafte Erfahrungen und Blockaden wie Wut, Angst, Trauer oder körperliche Verkrampfungen lösen. Die dabei freiwerdende Energie unterstützt dich darin, dich selbst wieder deutlicher zu spüren und dich innerlich stabiler, lebendiger und verbundener zu fühlen.', 'Anschließend findet ein Folgegespräch statt (ca. 30 Minuten), um alles sanft zu integrieren und wirken zu lassen.', 'Für kleine Stärkung stehen Wasser, Tee sowie Nüsse und getrocknete Früchte bereit. Auch ausreichend Kuscheldecken und Kissen sorgen dafür, dass Du es während der Session bequem und gemütlich hast.', 'Innerhalb von drei Tagen nach der Atemreise bekommst Du von mir Feedback und kleine Aufgaben per E-Mail. Auf Wunsch erstelle ich zusätzlich eine persönliche Meditation, die dich dabei unterstützt, die Affirmationen zu verankern, den Prozess zu vertiefen und dran zu bleiben.', 'Eine Serie von etwa sieben Einzelsitzungen ist empfehlenswert, um die bestmögliche Wirkung zu erzielen und danach den Atemprozess selbstständig durchführen zu können. Anschließend besteht auf Wunsch die Möglichkeit, an Atemreise im Warmen Wasser teilzunehmen.'],
+    description: ['Die UR-ATEM© Prozess inklusive die wundersame <span style="font-style: italic;">Rebirthing</span>-Atemreise findet unter meiner Führung und Begleitung in einem pri­vaten, geschützten Rahmen statt. Es ist eine intensive, erholsame und transformierende Erfahrung, die Dich Blockaden loslassen, innere Ruhe finden und neue Lebendigkeit spüren lässt.', 'Während der Atemreise nutzen wir die <span style="font-style: italic;">Rebirthing</span>-Atemtechnik, um wieder voll und frei atmen zu können. Es beginnt mit einem ausführlichen Erstgespräch (ca. 45 Minuten). Die geführte Atemreise selbst dauert 1–1,5 Stunden, wobei die Zeit oft wie im Flug vergeht.', 'Das fördert Entspannung und kann lange unterdrückte, schmerzhafte Erfahrungen und Blockaden wie Wut, Angst, Trauer oder körperliche Verkrampfungen lösen. Die dabei freiwerdende Energie unterstützt dich darin, dich selbst wieder deutlicher zu spüren und dich innerlich stabiler, lebendiger und verbundener zu fühlen.', 'Anschließend findet ein Folgegespräch statt (ca. 30 Minuten), um alles sanft zu integrieren und wirken zu lassen.', 'Für kleine Stärkung stehen Wasser, Tee sowie Nüsse und getrocknete Früchte bereit. Auch ausreichend Kuscheldecken und Kissen sorgen dafür, dass Du es während der Session bequem und gemütlich hast.', 'Innerhalb von drei Tagen nach der Atemreise bekommst Du von mir Feedback und kleine Aufgaben per E-Mail. Auf Wunsch erstelle ich zusätzlich eine persönliche Meditation, die dich dabei unterstützt, die Affirmationen zu verankern, den Prozess zu vertiefen und dran zu bleiben.', 'Eine Serie von etwa sieben Einzelsitzungen ist empfehlenswert, um die bestmögliche Wirkung zu erzielen und danach den Atemprozess selbstständig durchführen zu können. Anschließend besteht auf Wunsch die Möglichkeit, an Atemreise im Warmen Wasser teilzunehmen.'],
     hasDocuments: true
   }, {
     id: 'atemcoaching-detail',
@@ -55,7 +55,7 @@ export default function AtemPage({
     imageAlt: 'Adult practicing breathing exercises peacefully',
     ctaText: 'Atemcoaching Buchen',
     isFeatured: false,
-    description: ['Als Einstieg kannst Du bei mir ein Atemcoaching, also eine Atemarbeit-Einzelsession buchen, mit viel Raum für Austausch, tiefe Erkenntnisse und gezielte Atemübungen für Dich zum mitnehmen und praktizieren.'],
+    description: ['Als Einstieg kannst Du bei mir ein Atemcoaching, also eine Atemarbeit-Einzelsession buchen, mit viel Raum für Austausch, tiefe Erkenntnisse und gezielte Atemübungen für Dich zum mitnehmen und praktizieren. Du kommst wieder in Ruhe, Verbindung, Selbstbestimmung und Kraft', 'Vorteile dieser Sitzung:','Spannungen lösen sich', 'Du bist deinen Gefühlen nicht mehr ausgeliefert', 'Du findest deine innere Stabilität, auch wenn alles im Außen chaotisch wirkt', 'Du lässt Ängste hinter dir, die dich begrenzen', 'Du erlebst natürliche Lebensfreude'],
     benefits: ['Du kommst wieder in Ruhe, Verbindung, Selbstbestimmung und Kraft', 'Spannungen lösen sich', 'Du bist deinen Gefühlen nicht mehr ausgeliefert', 'Du findest deine innere Stabilität, auch wenn alles im Außen chaotisch wirkt', 'Du lässt Ängste hinter dir, die dich begrenzen', 'Du erlebst natürliche Lebensfreude']
   }, {
     id: 'warmwasser-detail',
@@ -74,7 +74,7 @@ export default function AtemPage({
     price: '90 CHF',
     duration: '60 Min.',
     subtitle: 'ca. 1 Stunde, im Sitzen, mit Fokus auf Beratung',
-    image: 'images/atemkinder.webp',
+    image: 'images/atemkids.webp',
     imageAlt: 'Child and adult practicing breathing exercises together',
     ctaText: 'Für Dein Kind Anmelden',
     isFeatured: false,
@@ -706,7 +706,7 @@ export default function AtemPage({
                   lineHeight: '1.3',
                   overflowWrap: 'break-word',
                   hyphens: 'auto'
-                }}>Eine geführte Atemsession nach der UR-ATEM©  Methode</h3>
+                }}>{service.title}</h3>
                     <div className="flex items-center justify-center gap-4 text-white text-xl font-['Montserrat'] font-semibold drop-shadow-md">
                       <span style={{
                     color: "#4d83a4"

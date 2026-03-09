@@ -41,7 +41,7 @@ const EVENT_DATA: Event[] = [{
   fullDescription: 'Ein transformatives Retreat im malerischen Château de Marigny. Begleitet von Karl Haag und Tina Christina Tomson tauchst Du ein in eine Reise zur Selbstentdeckung und innerem Glück.',
   details: ['Nimm dir eine bewusste Auszeit. In sechs klaren Schritten auf die Suche nach dem Wesentlichen. Seminarleitung: Karl Haag, Tina Christina Tomson.', 'Level 1: 14.–17. Februar 2026 – Grundlagen der Selbstfindung und bewussten Lebensführung', 'Level 2: 09.–12. April 2026 – Vertiefung und Integration in den Alltag', 'In einem neu renovierten malerischen Schloss in Frankreich inklusive Unterkunft im Château, liebevoll zubereiteten Mahlzeiten und allen Retreat-Inhalten.', 'Mit geführten Atemreisen, Meditationen, kreativen Workshops und Zeit für Selbstreflexion findest Du zurück zu Deiner inneren Mitte.', 'Die Retreats bauen aufeinander auf, können aber auch einzeln besucht werden.'],
   contactInfo: 'Kontaktiere uns für genauere Infos zu Preisen, Anmeldung und dem vollständigen Programm.',
-  imageSrc: 'https://images.unsplash.com/photo-1549294413-26f195200c16?w=1200&q=85',
+  imageSrc: 'images/france.webp',
   imageAlt: 'Retreat Finde Dein Glück - Château de Marigny in Frankreich'
 }, {
   id: 'seminar-2026',
@@ -52,7 +52,7 @@ const EVENT_DATA: Event[] = [{
   fullDescription: 'Ein intensiver Tag der Selbstentfaltung und des Neubeginns. Erlebe die transformative Kraft der <span style="font-style: italic;">Rebirthing</span>-Atemreise nach dem UR-ATEM© Prozess.',
   details: ['Erlebe die <span style="font-style: italic;">Rebirthing</span>-Atemreise nach dem UR-ATEM© Prozess. Selbstentfaltung, Neubeginn und frische Energie in achtsamer Atmosphäre.', 'Dieses Seminar lädt dich ein zu Selbstentfaltung, Neubeginn, frischer Energie und bewusstem Auftanken.', 'In einer geschützten, achtsamen Atmosphäre findest Du Raum, dich neu auszurichten, alte Blockaden loszulassen und die eigene innere Kraft zu entfalten.', 'Der UR-ATEM© Prozess verbindet bewusstes Atmen mit körperlicher Entspannung und emotionaler Öffnung.', 'Wir arbeiten in Kleingruppen, sodass jede/r Teilnehmer/in individuell begleitet werden kann.', 'Inkludiert: Alle Seminarunterlagen, Getränke und ein vegetarischer Mittagsimbiss.'],
   contactInfo: 'Anmeldung und weitere Infos per E-Mail. Begrenzte Teilnehmerzahl.',
-  imageSrc: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85',
+  imageSrc: 'images/group_breathwork.webp',
   imageAlt: 'Tagesseminar Innere Kraft - <span style="font-style: italic;">Rebirthing</span>-Atemreise nach UR-ATEM© Prozess'
 }];
 
@@ -80,7 +80,7 @@ const EventNavigationCard: React.FC<{
     duration: 0.6,
     delay: index * 0.1
   }} onClick={onClick} className="relative overflow-hidden rounded-2xl cursor-pointer group shadow-lg hover:shadow-2xl transition-all duration-500" style={{
-    aspectRatio: '2/2'
+    aspectRatio: '1/1'
   }}>
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -273,7 +273,7 @@ export default function EventsPage({
   const activeEvent = EVENT_DATA.find(e => e.id === activeEventId) || EVENT_DATA[0];
   const otherEvents = EVENT_DATA.filter(e => e.id !== activeEventId);
   return <section className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-8 lg:px-12 bg-[#faf9f7]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         
         {/* TOP NAVIGATION: Event Cards */}
         <motion.div initial={{
@@ -288,15 +288,21 @@ export default function EventsPage({
         marginTop: "70px",
         marginLeft: "0px"
       }}>
-          <h2 className="text-2xl lg:text-3xl text-[#2c2923] font-light leading-tight font-['Playfair_Display'] mb-8">
-            Alle Events
+          <h2 className="text-2xl lg:text-3xl text-[#2c2923] text-center font-light leading-tight font-['Playfair_Display'] mb-8">
+          Ein Platz für Sie
           </h2>
+          
+          <p className="space-y-5 lg:space-y-6 text-[#5a5550] text-center text-base lg:text-lg leading-relaxed font-['Montserrat',_sans-serif] mb-8">
+          Entdecken Sie unsere vergangenen und zukünftigen Treffen. Wenn Ihnen ein bestimmter Termin zusagt, würde ich mich freuen, Sie bei uns begrüßen zu dürfen. Kontaktieren Sie mich gerne für weitere Informationen oder um Ihren Platz in unserem nächsten Treffen zu reservieren.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {EVENT_DATA.map((event, index) => <EventNavigationCard key={event.id} event={event} onClick={() => handleCardClick(event.id)} index={index} />)}
           </div>
+          
         </motion.div>
-
+        <h2 className="text-2xl lg:text-3xl text-[#2c2923] font-light leading-tight font-['Playfair_Display'] mb-8">
+        Veranstaltungsdetails:
+          </h2>
         {/* MIDDLE: Active Event Detail */}
         <AnimatePresence >
           <motion.div key={activeEvent.id} initial={{

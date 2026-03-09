@@ -27,14 +27,14 @@ const events: Event[] = [{
   title: 'Retreat: Finde Dein Glück',
   date: 'Level 1: 14.–17. Feb 2026 | Level 2: 09.–12. April 2026',
   shortLocation: 'Frankreich',
-  imageSrc: 'https://images.unsplash.com/photo-1549294413-26f195200c16?w=1200&q=85',
+  imageSrc: 'images/france.webp',
   imageAlt: 'Retreat Finde Dein Glück - Château de Marigny in Frankreich'
 }, {
   id: 'seminar-2026',
   title: 'Tagesseminar „Innere Kraft"',
   date: 'Sonntag, 03. Mai 2026, 09:30–17:00',
   shortLocation: 'Heerbrugg',
-  imageSrc: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85',
+  imageSrc: 'images/group_breathwork.webp',
   imageAlt: 'Tagesseminar Innere Kraft - <span style="font-style: italic;">Rebirthing</span>-Atemreise nach UR-ATEM© Prozess'
 }];
 interface EventsPreviewSectionProps {
