@@ -1,5 +1,5 @@
 import React from 'react';
-const Logo = () => <img width="80" height="80" src="/images/Zeit4Dich_Logo.png" alt="Zeit Für Dich Logo" className="w-16 h-16 sm:w-20 sm:h-20" style={{
+const Logo = () => <img width="80" height="80" src="images/Zeit4Dich_Logo.png" alt="Zeit Für Dich Logo" className="w-16 h-16 sm:w-20 sm:h-20" style={{
   objectFit: "contain",
   objectPosition: "50% 50%",
   opacity: "1"

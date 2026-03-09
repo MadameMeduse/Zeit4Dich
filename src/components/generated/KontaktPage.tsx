@@ -160,9 +160,9 @@ export default function KontaktPage({
                       </h3>
                       <address className="not-italic font-['Montserrat'] text-base text-[#6B6560] leading-relaxed">
                         Tina Christina Tomson<br />
-                        Staatsstrasse 24a<br />
-                        9437 Marbach, St.Gallen<br />
-                        Schweiz
+                        Balgacherstrasse 202<br />
+                        9435 Heerbrugg SG, Schweiz<br />
+
                       </address>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ export default function KontaktPage({
                         Telefon
                       </h3>
                       <p className="font-['Montserrat'] text-base text-[#6B6560]">
-                        +41 76 408 2442
+                        +41 76 408 24 42
                       </p>
                     </div>
                   </div>

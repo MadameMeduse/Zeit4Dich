@@ -20,7 +20,7 @@ const events: Event[] = [{
   title: 'Atem-Abende in der Gruppe',
   date: 'Montag, 26. Januar 2026, 19:00–21:00 Uhr',
   shortLocation: 'Heerbrugg',
-  imageSrc: '/images/Gruppe_Abende.jpg',
+  imageSrc: 'images/Gruppe_Abende.jpg',
   imageAlt: 'Atem-Abende in der Gruppe - Gruppentreffen für bewusstes Atmen'
 }, {
   id: 'retreat-2026',

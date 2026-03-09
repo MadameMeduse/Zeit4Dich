@@ -31,14 +31,14 @@ export const InspirationSection: React.FC = () => {
     excerpt: 'Eine kraftvolle Visualisierung, um deine Wunschrealität bewusst zu gestalten und manifestieren.',
     category: 'meditationen',
     date: '21. Dez 2025',
-    thumbnail: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop'
+    thumbnail: 'images/visualisation.webp'
   }, {
     id: 'd1',
     title: 'Wasser-Detox-Ritual',
     excerpt: 'Ein einfaches, wirkungsvolles Do-It-Yourself-Ritual für zuhause – Detox mit Wasser, Affirmationen und bewusster Intention.',
     category: 'lifestyle',
     date: '20. Dez 2025',
-    thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop'
+    thumbnail: 'images/wasserdetox.webp'
   }, {
     id: 'b1',
     title: 'Die Kunst des Ankommens',

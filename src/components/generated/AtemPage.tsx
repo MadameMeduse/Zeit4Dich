@@ -51,7 +51,7 @@ export default function AtemPage({
     price: '126 CHF',
     duration: '90 Min.',
     subtitle: 'ca. 90 Minuten, im Sitzen, mit Fokus auf Beratung',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&h=600&fit=crop',
+    image: 'images/atem_sitting.jpg',
     imageAlt: 'Adult practicing breathing exercises peacefully',
     ctaText: 'Atemcoaching Buchen',
     isFeatured: false,
@@ -63,7 +63,7 @@ export default function AtemPage({
     price: 'Auf Anfrage',
     duration: 'Variabel',
     subtitle: 'Fortgeschrittene, im 35-36°C warmen Pool',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&h=600&fit=crop',
+    image: 'images/waterbreatch.webp',
     imageAlt: 'Person floating peacefully in warm water',
     ctaText: 'Jetzt Anfragen',
     isFeatured: false,
@@ -74,7 +74,7 @@ export default function AtemPage({
     price: '90 CHF',
     duration: '60 Min.',
     subtitle: 'ca. 1 Stunde, im Sitzen, mit Fokus auf Beratung',
-    image: 'https://images.unsplash.com/photo-1587616211892-e5e9def26809?w=1200&h=600&fit=crop',
+    image: 'images/atemkinder.webp',
     imageAlt: 'Child and adult practicing breathing exercises together',
     ctaText: 'Für Dein Kind Anmelden',
     isFeatured: false,
@@ -236,7 +236,7 @@ export default function AtemPage({
           backgroundSize: 'cover',
           backgroundPosition: '50% 50%',
           filter: 'sepia(0.15) saturate(0.8)',
-          opacity: 0.7
+          opacity: 0.8
         }} />
           <div className="absolute inset-0 bg-gradient-to-b from-[#F5F3EF]/70 via-[#F5F3EF]/50 to-[#EAE7E0]/90"></div>
         </div>
