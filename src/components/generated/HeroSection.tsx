@@ -20,48 +20,52 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           className="w-full h-full object-cover object-[50%_0%] opacity-75"
           loading="eager" 
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      {/* Main Container - Grid layout for Left-Column Alignment */}
-      <div className="relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-2 items-center px-4 sm:px-6 lg:px-12 pt-[128px]">
+      {/* Main Container - Grid layout */}
+      <div className="relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4 sm:px-6 lg:px-16 pt-[128px] pb-12">
         
-        {/* Left Column Content */}
+        {/* LEFT COLUMN: H1 and Button */}
         <motion.div 
-          initial={{ opacity: 0, x: -30 }} 
+          initial={{ opacity: 0, x: -40 }} 
           animate={{ opacity: 1, x: 0 }} 
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-xl w-full mx-auto lg:mx-0"
+          className="flex flex-col items-center	lg:items-start"
         >
-          {/* Glassmorphism Card */}
-          <div className="backdrop-blur-md bg-white/10 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-2xl border border-white/20 text-white">
-            
-            <h1 className="font-['Playfair_Display'] font-light leading-tight mb-6 text-[clamp(32px,5vw,56px)] break-words">
-              Dein Atem. Deine Energie. Dein Leben.
-            </h1>
+          <h1 className="font-['Playfair_Display'] text-white text-center	lg:text-left font-light leading-tight mb-8 text-[clamp(38px,6vw,72px)] drop-shadow-lg">
+            Dein Atem.<br />
+            Deine Energie.<br />
+            Dein Leben.
+          </h1>
 
-            <div className="space-y-6 font-['Montserrat'] text-base sm:text-lg leading-relaxed mb-8 opacity-95">
+          <button 
+            onClick={() => onNavigate('contact')} 
+            className="px-10 py-4 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] hover:shadow-xl transition-all duration-300 font-['Montserrat'] font-semibold text-lg active:scale-95 whitespace-nowrap"
+          >
+            Termin buchen
+          </button>
+        </motion.div>
+
+        {/* RIGHT COLUMN: Glassmorphism Card with Text */}
+        <motion.div 
+          initial={{ opacity: 0, x: 40 }} 
+          animate={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-center"
+        >
+          <div className="backdrop-blur-md bg-white/10 rounded-3xl p-8 lg:p-12 border border-white/20 text-white max-w-lg shadow-2xl">
+            <div className="space-y-6 font-['Montserrat'] text-base sm:text-lg leading-relaxed opacity-95">
               <p>
                 Atmen ist das Natürlichste der Welt – und doch liegt darin eine Kraft, die Dein Leben verändern kann. Es ist eine Brücke, die direkt zu Dir selbst führt.
               </p>
-              <p className="hidden sm:block">
+              <p className="hidden sm:block text-white/80">
                 Deine Reise zu mehr Wohlbefinden beginnt hier. Professionelle Atemsessions und Massagen für Körper und Geist.
               </p>
-            </div>
-
-            <div className="flex flex-row gap-4">
-              <button 
-                onClick={() => onNavigate('contact')} 
-                className="flex-1 sm:flex-none px-10 py-4 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 font-['Montserrat'] font-semibold text-base lg:text-lg shadow-lg active:scale-95 whitespace-nowrap"
-              >
-                Termin buchen
-              </button>
             </div>
           </div>
         </motion.div>
 
-        {/* Right Column - Kept empty for visual balance on desktop */}
-        <div className="hidden lg:block" />
       </div>
     </section>
   );
