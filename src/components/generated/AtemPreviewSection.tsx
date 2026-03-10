@@ -23,7 +23,7 @@ export const AtemPreviewSection: React.FC<AtemPreviewSectionProps> = ({ onNaviga
     <section 
       id="atem-preview" 
       // Changed to grid and dynamic dynamic viewport height (dvh) for stability
-      className="grid min-h-[100dvh] items-center py-20 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba] border-y-4 border-[#faf8f6]"
+      className="grid min-h-[100dvh] items-center py-20 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba]"
     >
       <div className="max-w-7xl mx-auto w-full">
         <motion.div 

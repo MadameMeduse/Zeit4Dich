@@ -23,7 +23,7 @@ export default function GiftVoucherSection({ onNavigate }: GiftVoucherSectionPro
   return (
     <section 
       id="gift-voucher" 
-      className="grid min-h-[100dvh] items-center py-20 px-4 sm:px-6 lg:px-8 bg-[#C9C4BA] border-y-4 border-[#faf8f6]"
+      className="grid min-h-[100dvh] items-center py-20 px-4 sm:px-6 lg:px-8 bg-[#C9C4BA] "
     >
       <div className="max-w-7xl mx-auto w-full">
         

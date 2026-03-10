@@ -29,11 +29,12 @@ export default function HomePage({
       <AboutPreviewSection onNavigate={onNavigate || (() => {})} />
       <AtemPreviewSection onNavigate={onNavigate || (() => {})} />
       <MassagePreviewSection onNavigate={onNavigate || (() => {})} />
-      <GiftVoucherSection onNavigate={onNavigate || (() => {})} />
+      <TestimonialsSection  />
       <EventsPreviewSection onNavigate={onNavigate || (() => {})} />
       <InspirationSection />
-      <TestimonialsSection  />
-      <NewsletterHero onNavigate={onNavigate || (() => {})} />
+      <GiftVoucherSection onNavigate={onNavigate || (() => {})} />
       <ClosingCTA onNavigate={onNavigate || (() => {})} />
+      <NewsletterHero onNavigate={onNavigate || (() => {})} />
+
     </div>;
 }

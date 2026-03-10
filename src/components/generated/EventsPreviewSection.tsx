@@ -99,7 +99,7 @@ const VisualEventCard: React.FC<{ event: Event; onClick: () => void; index: numb
 
 export const EventsPreviewSection: React.FC<{ onNavigate: (page: PageType, id?: string) => void }> = ({ onNavigate }) => {
   return (
-    <section className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba] border-y-4 border-[#faf8f6]">
+    <section className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba]">
       <div className="max-w-7xl mx-auto space-y-16">
         
         <motion.header 

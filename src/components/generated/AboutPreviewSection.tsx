@@ -23,7 +23,7 @@ export const AboutPreviewSection: React.FC<AboutPreviewSectionProps> = ({ onNavi
     <section 
       id="uber-mich" 
       // Using min-h-[100dvh] to aim for full screen while remaining flexible for long content
-      className="grid min-h-[100dvh] items-center py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#B5B0A6] border-y-4 border-[#faf5f5]"
+      className="grid min-h-[100dvh] items-center py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#B5B0A6]"
     >
       <div className="max-w-7xl mx-auto w-full">
         
