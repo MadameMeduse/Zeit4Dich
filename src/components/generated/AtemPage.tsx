@@ -261,7 +261,7 @@ export default function AtemPage({
             padding: '0 15px'
           }}>
               Blockaden lösen. Energie entfalten. Du sein.<br />
-              Nach der UR-ATEM© Methode
+              
             </h1>
             
             <div className="w-24 h-px bg-[#4d83a4]/30 mx-auto mb-8"></div>
@@ -273,7 +273,7 @@ export default function AtemPage({
             hyphens: 'auto',
             padding: '0 15px'
           }}>
-              Zurück zum Ursprung - Zurück zu Dir
+              Nach der UR-ATEM© Methode
             </h2>
             
             <p className="font-['Montserrat'] text-lg sm:text-xl text-[#4A4440] max-w-3xl mx-auto leading-relaxed mb-12">

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Calendar, MapPin, ChevronRight } from "lucide-react";
+import { Calendar, MapPin, ChevronRight, ArrowRight } from "lucide-react";
 
 type PageType = 'home' | 'about' | 'events' | 'contact' | 'atem' | 'massage' | 'inspiration';
 
@@ -19,7 +19,7 @@ const events: Event[] = [
   {
     id: 'group-sessions',
     title: 'Atem-Abende in der Gruppe',
-    date: 'Mo, 26. Jan 2026, 19:00–21:00',
+    date: '26. Jan 2026',
     shortLocation: 'Heerbrugg',
     imageSrc: 'images/Gruppe_Abende.jpg',
     imageAlt: 'Atem-Abende in der Gruppe'
@@ -35,7 +35,7 @@ const events: Event[] = [
   {
     id: 'seminar-2026',
     title: 'Tagesseminar „Innere Kraft"',
-    date: 'So, 03. Mai 2026, 09:30–17:00',
+    date: '03. Mai 2026',
     shortLocation: 'Heerbrugg',
     imageSrc: 'images/group_breathwork.webp',
     imageAlt: 'Tagesseminar Innere Kraft'
@@ -55,43 +55,41 @@ const VisualEventCard: React.FC<{ event: Event; onClick: () => void; index: numb
     viewport={{ once: true }}
     transition={{ delay: index * 0.1 }}
     onClick={onClick}
-    className="group relative aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer shadow-xl border-4 border-white"
+    className="group cursor-pointer flex flex-col"
   >
-    {/* Background Image - Scale restricted to desktop hover */}
-    <img 
-      src={event.imageSrc} 
-      alt={event.imageAlt} 
-      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 lg:group-hover:scale-110" 
-    />
-    
-    {/* Dark Gradient Overlay - Deeper on mobile for text visibility */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 lg:via-black/20 to-transparent pt-32" />
+    {/* Image Container with Floating Location */}
+    <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-stone-100 mb-8 shadow-sm transition-all duration-500 group-hover:shadow-xl">
+      <img 
+        src={event.imageSrc} 
+        alt={event.imageAlt} 
+        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+      />
+      
+      {/* Light Overlay Tag for Location */}
+      <div className="absolute top-6 left-6">
+        <span className="flex items-center gap-1.5 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full text-[10px] uppercase tracking-[0.15em] font-bold text-[#4d83a4] shadow-sm">
+          <MapPin size={12} />
+          {event.shortLocation}
+        </span>
+      </div>
+    </div>
 
-    {/* Info Overlay */}
-    <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 text-white">
-      <h3 className="text-2xl lg:text-3xl font-light font-['Playfair_Display'] mb-4 leading-tight">
+    {/* Info Area (Below Image for better readability) */}
+    <div className="px-2">
+      <div className="flex items-center gap-2 mb-3">
+        <Calendar size={14} className="text-[#4d83a4]" />
+        <span className="text-[11px] uppercase tracking-widest text-stone-400 font-medium">
+          {event.date}
+        </span>
+      </div>
+
+      <h3 className="text-2xl lg:text-3xl font-['Playfair_Display'] text-[#2c4b5e] mb-4 group-hover:text-[#4d83a4] transition-colors leading-tight font-medium">
         {event.title}
       </h3>
 
-      <div className="space-y-2 text-sm sm:text-base font-['Montserrat'] opacity-90">
-        <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4 text-[#4d83a4]" />
-          <span>{event.date}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-[#4d83a4]" />
-          <span>{event.shortLocation}</span>
-        </div>
-      </div>
-
-      {/* CTA Button Fix: 
-          Always visible on mobile/tablet, hidden-until-hover on desktop 
-      */}
-      <div className="mt-6 flex items-center gap-2 text-sm font-semibold font-['Montserrat'] border-t border-white/20 pt-4 
-                      opacity-100 translate-y-0 
-                      lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-300
-                      text-[#4d83a4] lg:text-white">
-        Details ansehen <ChevronRight size={16} />
+      <div className="flex items-center gap-3 text-[#4d83a4] text-sm font-semibold uppercase tracking-widest pt-2">
+        <span className="border-b border-[#4d83a4]/30 pb-1">Anmelden</span>
+        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
       </div>
     </div>
   </motion.article>
@@ -99,25 +97,26 @@ const VisualEventCard: React.FC<{ event: Event; onClick: () => void; index: numb
 
 export const EventsPreviewSection: React.FC<{ onNavigate: (page: PageType, id?: string) => void }> = ({ onNavigate }) => {
   return (
-    <section className="py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba]">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="py-24 sm:py-32 px-6 lg:px-12 bg-white">
+      <div className="max-w-7xl mx-auto">
         
         <motion.header 
           initial="hidden" 
           whileInView="visible" 
           viewport={{ once: true }} 
           variants={FADE_UP}
-          className="text-center space-y-6 max-w-3xl mx-auto"
+          className="text-center mb-20 space-y-6"
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-['Playfair_Display'] text-white tracking-tight">
+          <h2 className="text-[#4d83a4] font-['Playfair_Display'] font-bold tracking-tight"
+              style={{ fontSize: 'clamp(32px, 5vw, 48px)' }}>
             EVENTS
           </h2>
-          <p className="text-white text-lg sm:text-xl font-['Montserrat'] leading-relaxed font-normal">
+          <p className="text-[#7A7568] text-lg sm:text-xl font-['Montserrat'] leading-relaxed font-light max-w-2xl mx-auto">
             Kommende Retreats, Atemabende in der Gruppe und Tagesseminare.
           </p>
         </motion.header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
           {events.map((event, index) => (
             <VisualEventCard 
               key={event.id} 
@@ -133,18 +132,20 @@ export const EventsPreviewSection: React.FC<{ onNavigate: (page: PageType, id?: 
           whileInView="visible" 
           viewport={{ once: true }} 
           variants={FADE_UP}
-          className="flex flex-col items-center space-y-10"
+          className="mt-24 flex flex-col items-center space-y-12"
         >
-          <p className="text-white text-base sm:text-lg italic font-['Montserrat'] text-center max-w-2xl opacity-90">
-            "Atem-Events können auf Wunsch auch an anderen Orten stattfinden. Kontaktiere mich gerne für private Gruppenanfragen."
+          <div className="h-px w-24 bg-stone-200" />
+          
+          <p className="text-stone-500 text-sm sm:text-base italic font-['Montserrat'] text-center max-w-xl font-light leading-loose">
+            "Atem-Events können auf Wunsch auch an anderen Orten stattfinden. 
+            Kontaktiere mich gerne für private Gruppenanfragen."
           </p>
 
           <button 
             onClick={() => onNavigate('events')} 
-            className="group flex items-center gap-3 px-10 py-4 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 shadow-lg font-['Montserrat'] font-semibold text-lg active:scale-95"
+            className="px-12 py-5 bg-[#4d83a4] text-white rounded-full font-['Montserrat'] font-medium tracking-widest text-sm uppercase shadow-xl shadow-blue-900/10 hover:bg-[#3d6a85] transition-all active:scale-95"
           >
             Alle Events anzeigen
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </motion.div>
       </div>

@@ -1,24 +1,31 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import { ARTICLE_DB } from '@/lib/articledata'; 
 
 type PageType = 'home' | 'about' | 'events' | 'contact' | 'atem' | 'massage' | 'inspiration';
 type CategoryType = 'meditationen' | 'lifestyle' | 'blog';
 
-interface Article {
-  id: string;
-  title: string;
-  excerpt: string;
-  category: CategoryType;
-  date: string;
-  thumbnail: string;
-}
-
 const FADE_UP: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+};
+
+const CATEGORY_META = {
+  meditationen: {
+    title: 'Meditationen',
+    description: 'Kurz-Meditationen & Visualisierungen – kleine Auszeiten für zwischendurch, die dich zentrieren und dein inneres Gleichgewicht stärken.',
+  },
+  lifestyle: {
+    title: 'Lifestyle',
+    description: 'Einfache Praktiken und Rituale, die dich erden und deinen Alltag mit Klarheit und bewusster Intention bereichern.',
+  },
+  blog: {
+    title: 'Blog',
+    description: 'Persönliche Gedanken und Impulse, die helfen, bewusster zu leben und dein volles Potenzial zu entfalten.',
+  }
 };
 
 export default function InspirationPage({ onNavigate, onArticleClick }: { 
@@ -27,35 +34,9 @@ export default function InspirationPage({ onNavigate, onArticleClick }: {
 }) {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('meditationen');
 
-  const categories = {
-    meditationen: {
-      title: 'Meditationen',
-      description: 'Kurz-Meditationen & Visualisierungen – kleine Auszeiten für zwischendurch, die dich zentrieren und dein inneres Gleichgewicht stärken.',
-      articles: [
-        { id: 'm1', title: 'Lichtfeld-Aktivierung', excerpt: 'Erinnere dich an dein eigenes Licht – eine Reise in dein energetisches Feld.', category: 'meditationen' as CategoryType, date: '21. Dez 2025', thumbnail: 'images/innerlight.webp' },
-        { id: 'm2', title: 'Feld-Reset', excerpt: 'Klare Schritte für einen energetischen Reset mit Fokus auf Schutz und Abgrenzung.', category: 'meditationen' as CategoryType, date: '18. Dez 2025', thumbnail: 'images/boundaries.webp' },
-        { id: 'm3', title: 'Zurück in die Mitte', excerpt: 'Stille finden und dich an dein schöpferisches Selbst erinnern.', category: 'meditationen' as CategoryType, date: '15. Dez 2025', thumbnail: 'images/creative2.webp' }
-      ]
-    },
-    lifestyle: {
-      title: 'Lifestyle',
-      description: 'Einfache Praktiken und Rituale, die dich erden und deinen Alltag mit Klarheit und bewusster Intention bereichern.',
-      articles: [
-        { id: 'd1', title: 'Wasser-Detox-Ritual', excerpt: 'Wirkungsvolles DIY-Ritual für zuhause – Detox mit bewusster Intention.', category: 'lifestyle' as CategoryType, date: '20. Dez 2025', thumbnail: 'images/wasserdetox.webp' },
-        { id: 'd2', title: 'Gesprächs-Magnet', excerpt: 'Nutze dein Energiefeld, um wichtige Gespräche positiv vorzuprogrammieren.', category: 'lifestyle' as CategoryType, date: '17. Dez 2025', thumbnail: 'https://media.istockphoto.com/id/1050287390/photo/businesswoman-and-businessman-hr-manager-interviewing-woman.jpg?s=612x612&w=0&k=20&c=dRUcgzI-tdZIzbl-ezMitdmgyuYlpT0ncfcOCZBLL9k=' },
-        { id: 'd3', title: 'Realitätsgestaltung', excerpt: 'Gestalte dein Leben als Resonanzfeld durch die Verbindung von Atem und Geist.', category: 'lifestyle' as CategoryType, date: '14. Dez 2025', thumbnail: 'images/reality.png' }
-      ]
-    },
-    blog: {
-      title: 'Blog',
-      description: 'Persönliche Gedanken und Impulse, die helfen, bewusster zu leben und dein volles Potenzial zu entfalten.',
-      articles: [
-        { id: 'b1', title: 'Die Kunst des Ankommens', excerpt: 'Wie wir im Hier und Jetzt wirklich präsent sein können.', category: 'blog' as CategoryType, date: '19. Dez 2025', thumbnail: 'images/arrive.webp' },
-        { id: 'b2', title: 'Selbstfürsorge als Basis', excerpt: 'Warum gut für sich zu sorgen die Voraussetzung für alles andere ist.', category: 'blog' as CategoryType, date: '16. Dez 2025', thumbnail: 'images/selfcare.webp' },
-        { id: 'b3', title: 'Der Atem als Anker', excerpt: 'Wie bewusstes Atmen uns stabil durch herausfordernde Zeiten trägt.', category: 'blog' as CategoryType, date: '13. Dez 2025', thumbnail: 'images/ancor.webp' }
-      ]
-    }
-  };
+  const filteredArticles = useMemo(() => {
+    return Object.values(ARTICLE_DB).filter(article => article.category === activeCategory);
+  }, [activeCategory]);
 
   return (
     <div className="min-h-screen bg-[#c9c4ba]">
@@ -85,7 +66,7 @@ export default function InspirationPage({ onNavigate, onArticleClick }: {
         
         {/* Category Navigation */}
         <nav className="flex flex-wrap justify-center gap-4 mb-12">
-          {(Object.keys(categories) as CategoryType[]).map((key) => (
+          {(Object.keys(CATEGORY_META) as CategoryType[]).map((key) => (
             <button
               key={key}
               onClick={() => setActiveCategory(key)}
@@ -95,7 +76,7 @@ export default function InspirationPage({ onNavigate, onArticleClick }: {
                 : 'bg-white/20 text-white hover:bg-white/30 border border-white/40'
               }`}
             >
-              {categories[key].title}
+              {CATEGORY_META[key].title}
             </button>
           ))}
         </nav>
@@ -110,7 +91,7 @@ export default function InspirationPage({ onNavigate, onArticleClick }: {
             className="text-center mb-16 max-w-3xl mx-auto"
           >
             <p className="text-white text-lg sm:text-xl font-['Montserrat'] font-light italic opacity-90">
-              {categories[activeCategory].description}
+              {CATEGORY_META[activeCategory].description}
             </p>
           </motion.div>
         </AnimatePresence>
@@ -118,51 +99,47 @@ export default function InspirationPage({ onNavigate, onArticleClick }: {
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           <AnimatePresence mode="popLayout">
-            {categories[activeCategory].articles.map((article, index) => (
+            {filteredArticles.map((article, index) => (
               <motion.article
-  key={article.id}
-  variants={FADE_UP}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  transition={{ delay: index * 0.1 }}
-  onClick={() => onArticleClick?.(article.id, activeCategory)}
-  className="group relative aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer shadow-xl border-4 border-white flex flex-col justify-end bg-white"
->
-  <img 
-    src={article.thumbnail} 
-    alt={article.title} 
-    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 lg:group-hover:scale-110" 
-  />
-  
-  {/* The Gradient: Slightly darker on mobile to ensure immediate text legibility */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 lg:via-black/20 to-transparent" />
-  
-  <div className="relative p-6 sm:p-8 text-white">
-    <span className="text-xs font-bold font-['Montserrat'] uppercase tracking-widest text-[#4d83a4] mb-2 block">
-      {article.date}
-    </span>
-    
-    <h3 className="text-2xl font-['Playfair_Display'] font-light mb-3 leading-tight">
-      {article.title}
-    </h3>
+                key={article.id}
+                variants={FADE_UP}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => onArticleClick?.(article.id, activeCategory)}
+                className="group relative aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer shadow-xl border-4 border-white flex flex-col justify-end bg-white"
+              >
+                <img 
+                  src={article.thumbnail} 
+                  alt={article.title} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 lg:group-hover:scale-110" 
+                />
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4d83a4]/95 via-[#4d83a4]/50 lg:via-[#4d83a4]/40 to-transparent" />
+                
+                <div className="relative p-6 sm:p-8 text-white">
+                  <span className="text-xs font-bold font-['Montserrat'] uppercase tracking-widest text-white mb-2 block">
+                    {article.date}
+                  </span>
+                  
+                  <h3 className="text-2xl font-['Playfair_Display'] font-light mb-3 leading-tight">
+                    {article.title}
+                  </h3>
 
-    {/* MOBILE FIX: 
-        - On mobile (default), opacity is 90 and translate-y is 0 (visible).
-        - On desktop (lg:), we hide it (opacity-0) and slide it down (translate-y-4).
-        - It then reveals on hover (group-hover). 
-    */}
-    <div className="space-y-4 opacity-90 lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-500">
-      <p className="text-sm font-['Montserrat'] line-clamp-2 lg:line-clamp-3">
-        {article.excerpt}
-      </p>
-      
-      <div className="flex items-center gap-2 text-sm font-semibold text-[#4d83a4] lg:text-white">
-        Mehr lesen <ChevronRight size={16} />
-      </div>
-    </div>
-  </div>
-</motion.article>
+                  {/* PREVIEW TEXT: Always visible (opacity-90) */}
+                  <div className="space-y-4">
+                    <p className="text-sm font-['Montserrat'] line-clamp-2 lg:line-clamp-3 opacity-90">
+                      {article.excerpt}
+                    </p>
+                    
+                    {/* BUTTON: Hidden by default on desktop, shown on hover */}
+                    <div className="flex items-center gap-2 text-sm font-semibold text-[#4d83a4] lg:text-white transition-all duration-300 lg:opacity-0 lg:translate-y-2 lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+                      Mehr lesen <ChevronRight size={16} />
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </div>

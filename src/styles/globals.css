@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Place your custom article styles here */
+@layer components {
+ /* --- MOBILE FIRST (Base Styles) --- */
+.article-container {
+    max-width: 100%; /* Occupy full width on mobile */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
+    color: #44403c;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Base Paragraph - Focused on mobile tap-targets and flow */
+  .article-container p {
+    margin-bottom: 1.5rem !important; /* Slightly tighter for mobile flow */
+    line-height: 1.75;
+    font-size: 1rem;
+  }
+  
+  /* Mobile Headings - Scale down to prevent awkward word-breaks */
+  .article-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem; /* Downsized for mobile */
+    color: #4d83a4;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  
+  .article-container h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4d83a4;
+    margin-top: 2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .article-container h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #4d83a4;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Mobile Section/Box */
+  .article-container section {
+    margin: 2.5rem 0 !important;
+    padding: 1.5rem; /* Reduced padding to maximize text space */
+    background-color: #f9f8f7;
+    border-radius: 1.25rem;
+  }
+  
+  .article-container ul, 
+  .article-container ol {
+    margin-bottom: 1.5rem !important;
+    padding-left: 1.25rem;
+  }
+  
+  .article-container li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* --- TABLET & DESKTOP ENHANCEMENTS (Upward Scaling) --- */
+  @media (min-width: 768px) {
+    .article-container {
+      max-width: 72ch; /* Enforce readability length */
+      padding: 0; /* Remove safe-zone as margin-auto takes over */
+    }
+  
+    .article-container p {
+      margin-bottom: 2rem !important;
+      font-size: 1.125rem; /* Slightly larger for larger screens */
+      line-height: 1.8;
+    }
+  
+    .article-container h2 {
+      font-size: 2.25rem;
+      margin-top: 2rem !important; /* Increase separation on desktop */
+      margin-bottom: 1.5rem !important;
+    }
+  
+    .article-container h3 {
+      font-size: 1.875rem;
+      margin-top: 3rem !important;
+    }
+  
+    .article-container section {
+      margin: 4rem 0 !important;
+      padding: 3rem; /* Return to luxury padding */
+      border-radius: 2rem;
+    }
+  }
+}

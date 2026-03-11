@@ -79,7 +79,7 @@ export const AtemPreviewSection: React.FC<AtemPreviewSectionProps> = ({ onNaviga
               {/* Action Buttons - Single row and equal width logic kept */}
               <div className="flex flex-row gap-3 sm:gap-4 pt-6">
                 <button 
-                  onClick={() => onNavigate('atem', 'ur-atem-detail')} 
+                  onClick={() => onNavigate('atem')} 
                   className="flex-1 px-4 sm:px-8 py-3.5 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 font-['Montserrat'] font-semibold text-sm sm:text-base lg:text-lg shadow-md whitespace-nowrap active:scale-95"
                 >
                   Mehr erfahren

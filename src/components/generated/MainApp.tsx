@@ -117,12 +117,20 @@ export default function MainApp() {
   // Render current page content
   const renderPage = () => {
     // If viewing an article, show ArticlePage
-    if (currentPage === 'inspiration' && currentArticle) {
-      return <ArticlePage articleId={currentArticle.id} category={currentArticle.category} onNavigate={handleNavigate} onBack={handleBackToInspiration} onArticleClick={handleArticleClick} />;
+    if (currentArticle) {
+      return (
+        <ArticlePage 
+          articleId={currentArticle.id} 
+          category={currentArticle.category} 
+          onNavigate={handleNavigate} 
+          onBack={handleBackToInspiration} 
+          onArticleClick={handleArticleClick} 
+        />
+      );
     }
     switch (currentPage) {
       case 'home':
-        return <HomePage onNavigate={handleNavigate} />;
+        return <HomePage onNavigate={handleNavigate} onArticleClick={handleArticleClick} />;
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
       case 'atem':
@@ -136,7 +144,7 @@ export default function MainApp() {
       case 'contact':
         return <KontaktPage onNavigate={handleNavigate} />;
       default:
-        return <HomePage onNavigate={handleNavigate} />;
+        return <HomePage onNavigate={handleNavigate} onArticleClick={handleArticleClick} />;
     }
   };
   return useMemo(() => {
