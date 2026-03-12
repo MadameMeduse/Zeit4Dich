@@ -22,71 +22,78 @@ export const AtemPreviewSection: React.FC<AtemPreviewSectionProps> = ({ onNaviga
   return (
     <section 
       id="atem-preview" 
-      // Changed to grid and dynamic dynamic viewport height (dvh) for stability
-      className="grid min-h-[100dvh] items-center py-20 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba]"
+      /* min-h-[100dvh]: Ensures it takes up the full viewport.
+         flex justify-center: Centers the entire block vertically between sections.
+      */
+      className="relative flex flex-col justify-center min-h-[100dvh] py-24 px-4 sm:px-6 lg:px-8 bg-[#c9c4ba] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10%" }}
           variants={FADE_UP_VARIANTS}
-          className="flex flex-col space-y-12 lg:space-y-16"
         >
-          {/* Main Title - Centered */}
-          <h2 className="text-center font-['Playfair_Display'] text-white font-bold text-5xl sm:text-6xl lg:text-7xl tracking-tight">
-            ATEM
-          </h2>
+          {/* SECTION HEADING: 
+              - text-right: Moves it to the right.
+              - lg:pr-[15%]: Fine-tunes the "not exactly in the middle" look for desktop.
+              - mb-24: Massive space beneath the title.
+          */}
+          <header className="w-full mb-20 md:mb-32 lg:pr-[10%]">
+            <h2 className="text-right font-['Playfair_Display'] text-white font-bold text-6xl sm:text-7xl lg:text-9xl tracking-tighter opacity-90">
+              ATEM
+            </h2>
+          </header>
 
-          {/* FIX: CSS Grid ensures image col matches text col height perfectly */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-10 xl:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-12 xl:gap-20">
             
-            {/* Image Column - Now dynamic height based on text */}
-            <div className="order-2 lg:order-1 flex w-full h-full">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 sm:border-[6px] border-white w-full h-full aspect-[4/3] lg:aspect-auto min-h-[300px] lg:min-h-[400px]">
+            {/* Image Column */}
+            <div className="order-2 lg:order-1 relative">
+              {/* Subtle background element for depth */}
+              <div className="absolute -inset-4 bg-white/5 rounded-[2rem] blur-2xl lg:block hidden" />
+              
+              <div className="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-[6px] border-white/20">
                 <img 
                   src="https://storage.googleapis.com/storage.magicpath.ai/user/351284685155995648/assets/73c9c580-ce64-4c73-9990-1ba4a99bb963.png" 
                   alt="Atemsession – Bewusst atmen" 
-                  // Senior fix: Absolute inset ensures image fits the grid cell precisely
-                  className="absolute inset-0 w-full h-full object-cover opacity-95 sepia-[0.08] saturate-[0.9]" 
+                  className="w-full h-auto aspect-[4/5] object-cover" 
                   loading="lazy" 
                 />
               </div>
             </div>
 
-            {/* Text Content Column - order-1 (Top on Mobile) */}
-            <div className="order-1 lg:order-2 flex flex-col justify-center space-y-6 text-white h-full pb-8 lg:pb-0">
-              <header className="space-y-2">
-                <h3 className="font-['Playfair_Display'] text-3xl sm:text-4xl lg:text-4xl leading-tight">
-                  Bewusst Atmen – bewusst Sein
+            {/* Text Content Column */}
+            <div className="order-1 lg:order-2 flex flex-col justify-center space-y-8 text-white">
+              <div className="space-y-4">
+                <span className="text-[10px] tracking-[0.3em] font-bold uppercase opacity-70">
+                  Einzelsitzungen
+                </span>
+                <h3 className="font-['Playfair_Display'] text-4xl sm:text-5xl leading-[1.1]">
+                  Bewusst Atmen – <br className="hidden sm:block" /> bewusst Sein
                 </h3>
-              </header>
+              </div>
 
-              <div className="font-['Montserrat'] text-base sm:text-lg space-y-4 font-normal leading-relaxed">
+              <div className="font-['Montserrat'] text-lg space-y-6 font-light leading-relaxed opacity-95">
                 <p>
                   Entdecke, wie der Atem Stress reduzieren und dich zentrieren kann. Unter meiner Führung lernst du, wieder frei zu atmen. Das löst unterdrückte Blockaden auf und bringt Entspannung.
                 </p>
-                <p className="text-sm opacity-90 italic pt-2">
+                
+                <p className="text-xs opacity-60 italic">
                   UR-ATEM© ist eine registrierte Marke von Tina Christina Tomson.
                 </p>
-                
-                <div className="pt-6 border-t border-white/20 space-y-1">
-                  <p className="font-medium">Dauer: ca. 2 Stunden</p>
-                  <p className="font-medium">Ausgleich: ca. 180 CHF</p>
-                </div>
               </div>
 
-              {/* Action Buttons - Single row and equal width logic kept */}
-              <div className="flex flex-row gap-3 sm:gap-4 pt-6">
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button 
                   onClick={() => onNavigate('atem')} 
-                  className="flex-1 px-4 sm:px-8 py-3.5 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 font-['Montserrat'] font-semibold text-sm sm:text-base lg:text-lg shadow-md whitespace-nowrap active:scale-95"
+                  className="flex-1 px-8 py-4 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 font-semibold shadow-lg active:scale-95"
                 >
                   Mehr erfahren
                 </button>
                 <button 
                   onClick={() => onNavigate('contact')} 
-                  className="flex-1 px-4 sm:px-8 py-3.5 bg-white text-[#4d83a4] border-2 border-white rounded-full hover:bg-transparent hover:text-white transition-all duration-300 font-['Montserrat'] font-semibold text-sm sm:text-base lg:text-lg shadow-md whitespace-nowrap active:scale-95"
+                  className="flex-1 px-8 py-4 bg-white text-[#4d83a4] rounded-full hover:bg-stone-100 transition-all duration-300 font-semibold shadow-lg active:scale-95"
                 >
                   Termin buchen
                 </button>

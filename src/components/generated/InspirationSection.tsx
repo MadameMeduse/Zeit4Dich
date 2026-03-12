@@ -44,7 +44,7 @@ export const InspirationSection: React.FC<InspirationSectionProps> = ({
   const handleNext = () => setCurrentIndex(prev => Math.min(maxDesktopIndex, prev + 1));
 
   return (
-    <section id="inspiration" className="py-24 sm:py-32 bg-[#FCFAF8] overflow-hidden">
+    <section id="inspiration" className="py-24 sm:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
         <motion.header 
