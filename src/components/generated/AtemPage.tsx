@@ -294,141 +294,12 @@ export default function AtemPage({
         </div>
       </section>
 
-      {/* Pricing Table - "Mein Angebot" */}
-      <section id="mein-angebot" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F5F3EF] to-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.h3 {...fadeInUp} className="font-['Playfair_Display'] text-3xl sm:text-4xl text-[#4A4440] font-light mb-6 text-center">
-            Mein Angebot
-          </motion.h3>
-          
-          <motion.p {...fadeInUp} className="text-center text-[#6B6560] font-['Montserrat'] text-lg mb-12 max-w-2xl mx-auto italic">
-            "Entscheide ehrlich für dich – was ist dir diese Zeit mit dir selbst wert?"
-          </motion.p>
 
-          {/* Pricing Cards with "Mehr erfahren" buttons */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {/* Card: UR-ATEM© - Featured */}
-            <motion.div initial={{
-            opacity: 0,
-            y: isMobile ? 10 : 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: isMobile ? 0.2 : 0.6
-          }} className="relative bg-white rounded-2xl p-8 shadow-xl border-2 border-[#4d83a4] hover:shadow-2xl transition-all duration-300 flex flex-col">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#4d83a4] text-white px-4 py-1 rounded-full text-sm font-semibold font-['Montserrat'] shadow-lg">
-                Beliebt
-              </div>
-              
-              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center mt-2">Geführte Atemreise</h4>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Blockaden lösen. Energie entfalten. Du sein.</p>
-              <div className="text-center mb-4">
-                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">180–225 CHF</p>
-                <p className="text-sm text-[#6B6560] font-['Montserrat']">Variabel</p>
-              </div>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">Tiefe & Transformation nach der UR-ATEM© Methode (im Liegen)</p>
-              <button onClick={() => scrollToSection('ur-atem-detail')} className="w-full px-6 py-2.5 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 font-['Montserrat'] font-semibold text-sm shadow-md mt-auto">
-                Mehr erfahren
-              </button>
-            </motion.div>
-
-            {/* Card: Atemcoaching */}
-            <motion.div initial={{
-            opacity: 0,
-            y: isMobile ? 10 : 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: isMobile ? 0.2 : 0.6,
-            delay: isMobile ? 0 : 0.1
-          }} className="bg-white rounded-2xl p-8 shadow-lg border border-[#4d83a4]/20 hover:shadow-xl transition-all duration-300 flex flex-col">
-              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Atemcoaching, Erwachsene</h4>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Atme frei. Lebe klar. Tipps & Tricks für den Alltag.</p>
-              <div className="text-center mb-4">
-                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">126 CHF</p>
-                <p className="text-sm text-[#6B6560] font-['Montserrat']">90 Min.</p>
-              </div>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">
-                Fokus auf Beratung & Übungen (im Sitzen)
-              </p>
-              <button onClick={() => scrollToSection('atemcoaching-detail')} className="w-full px-6 py-2.5 border-2 border-[#4d83a4] text-[#4d83a4] rounded-full hover:bg-[#4d83a4] hover:text-white transition-all duration-300 font-['Montserrat'] font-semibold text-sm mt-auto">
-                Mehr erfahren
-              </button>
-            </motion.div>
-
-            {/* Card: Warmwasser-Reise */}
-            <motion.div initial={{
-            opacity: 0,
-            y: isMobile ? 10 : 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: isMobile ? 0.2 : 0.6,
-            delay: isMobile ? 0 : 0.2
-          }} className="bg-white rounded-2xl p-8 shadow-lg border border-[#4d83a4]/20 hover:shadow-xl transition-all duration-300 flex flex-col">
-              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Warmwasser-Atemreise</h4>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Fortgeschrittene</p>
-              <div className="text-center mb-4">
-                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">Auf Anfrage</p>
-                <p className="text-sm text-[#6B6560] font-['Montserrat']">Variabel</p>
-              </div>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">Besonders kraftvoll; im 35-36°C warmen Pool oder Badewanne<br /></p>
-              <button onClick={() => scrollToSection('warmwasser-detail')} className="w-full px-6 py-2.5 border-2 border-[#4d83a4] text-[#4d83a4] rounded-full hover:bg-[#4d83a4] hover:text-white transition-all duration-300 font-['Montserrat'] font-semibold text-sm mt-auto">
-                Mehr erfahren
-              </button>
-            </motion.div>
-
-            {/* Card: Coaching für Kids */}
-            <motion.div initial={{
-            opacity: 0,
-            y: isMobile ? 10 : 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: isMobile ? 0.2 : 0.6,
-            delay: isMobile ? 0 : 0.3
-          }} className="bg-white rounded-2xl p-8 shadow-lg border border-[#4d83a4]/20 hover:shadow-xl transition-all duration-300 flex flex-col">
-              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Coaching <br />für Kids</h4>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Kinder/Jugendliche<br /></p>
-              <div className="text-center mb-4">
-                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">90 CHF</p>
-                <p className="text-sm text-[#6B6560] font-['Montserrat']">60 Min.</p>
-              </div>
-              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">
-                Hilfe bei Stress, Ängsten & Konzentration
-              </p>
-              <button onClick={() => scrollToSection('kids-detail')} className="w-full px-6 py-2.5 border-2 border-[#4d83a4] text-[#4d83a4] rounded-full hover:bg-[#4d83a4] hover:text-white transition-all duration-300 font-['Montserrat'] font-semibold text-sm mt-auto">
-                Mehr erfahren
-              </button>
-            </motion.div>
-          </div>
-
-          {/* Recommendation Footer */}
-          <motion.div {...fadeInUp} className="bg-[#4d83a4]/5 rounded-2xl p-6 text-center border border-[#4d83a4]/20">
-            <p className="text-[#6B6560] font-['Montserrat'] text-base">
-              <span className="font-semibold">Empfehlung:</span> Für eine nachhaltige Transformation empfehle ich eine Serie von etwa{' '}
-              <span className="font-semibold text-[#4d83a4]">sieben Einzelsitzungen</span>.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Introduction & What is UR-ATEM© */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-white">
         <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-br from-white to-[#F5F3EF] rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl border border-[#4d83a4]/20">
+          <div className="p-8 sm:p-12 lg:p-16">
             <h2 className="font-['Playfair_Display'] text-4xl sm:text-5xl text-[#4A4440] font-light mb-8 text-center" style={{
             fontSize: 'clamp(28px, 4vw, 48px)',
             lineHeight: '1.3',
@@ -498,7 +369,7 @@ export default function AtemPage({
       {/* What is Rebirthing - Expanded Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 bg-gradient-to-b from-[#F5F3EF] to-white">
         <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl border border-[#4d83a4]/20">
+          <div className="p-8 sm:p-12 lg:p-16 ">
             <h3 className="font-['Playfair_Display'] text-3xl sm:text-4xl text-[#4A4440] font-light mb-4 text-center" style={{
             fontStyle: "normal"
           }}>
@@ -521,7 +392,7 @@ export default function AtemPage({
                   }}>Rebirthing</span> in the New Age" von Leonard Orr und Sondra Ray; 2007, Trafford Publishing. ISBN: ‎978-1425114169.</p>
                   
                   {/* Gradient fade overlay when collapsed */}
-                  {!isRebirthingExpanded && <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />}
+                  {!isRebirthingExpanded && <div className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none" />}
                 </div>
                 
                 <motion.button onClick={() => setIsRebirthingExpanded(!isRebirthingExpanded)} className="mt-3 text-[#4d83a4] underline font-semibold flex items-center gap-1 transition-colors hover:text-[#3d6a85] mx-auto" whileHover={{
@@ -661,6 +532,137 @@ export default function AtemPage({
                 </div>
               </motion.div>)}
           </div>
+        </div>
+      </section>
+
+            {/* Pricing Table - "Mein Angebot" */}
+            <section id="mein-angebot" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F5F3EF] to-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.h3 {...fadeInUp} className="font-['Playfair_Display'] text-3xl sm:text-4xl text-[#4A4440] font-light mb-6 text-center">
+            Mein Angebot
+          </motion.h3>
+          
+          <motion.p {...fadeInUp} className="text-center text-[#6B6560] font-['Montserrat'] text-lg mb-12 max-w-2xl mx-auto italic">
+            "Entscheide ehrlich für dich – was ist dir diese Zeit mit dir selbst wert?"
+          </motion.p>
+
+          {/* Pricing Cards with "Mehr erfahren" buttons */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {/* Card: UR-ATEM© - Featured */}
+            <motion.div initial={{
+            opacity: 0,
+            y: isMobile ? 10 : 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: isMobile ? 0.2 : 0.6
+          }} className="relative bg-white rounded-2xl p-8 shadow-xl border-2 border-[#4d83a4] hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#4d83a4] text-white px-4 py-1 rounded-full text-sm font-semibold font-['Montserrat'] shadow-lg">
+                Beliebt
+              </div>
+              
+              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center mt-2">Geführte Atemreise</h4>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Blockaden lösen. Energie entfalten. Du sein.</p>
+              <div className="text-center mb-4">
+                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">180–225 CHF</p>
+                <p className="text-sm text-[#6B6560] font-['Montserrat']">Variabel</p>
+              </div>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">Tiefe & Transformation nach der UR-ATEM© Methode (im Liegen)</p>
+              <button onClick={() => scrollToSection('ur-atem-detail')} className="w-full px-6 py-2.5 bg-[#4d83a4] text-white rounded-full hover:bg-[#3d6a85] transition-all duration-300 font-['Montserrat'] font-semibold text-sm shadow-md mt-auto">
+                Mehr erfahren
+              </button>
+            </motion.div>
+
+            {/* Card: Atemcoaching */}
+            <motion.div initial={{
+            opacity: 0,
+            y: isMobile ? 10 : 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: isMobile ? 0.2 : 0.6,
+            delay: isMobile ? 0 : 0.1
+          }} className="bg-white rounded-2xl p-8 shadow-lg border border-[#4d83a4]/20 hover:shadow-xl transition-all duration-300 flex flex-col">
+              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Atemcoaching, Erwachsene</h4>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Atme frei. Lebe klar. Tipps & Tricks für den Alltag.</p>
+              <div className="text-center mb-4">
+                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">126 CHF</p>
+                <p className="text-sm text-[#6B6560] font-['Montserrat']">90 Min.</p>
+              </div>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">
+                Fokus auf Beratung & Übungen (im Sitzen)
+              </p>
+              <button onClick={() => scrollToSection('atemcoaching-detail')} className="w-full px-6 py-2.5 border-2 border-[#4d83a4] text-[#4d83a4] rounded-full hover:bg-[#4d83a4] hover:text-white transition-all duration-300 font-['Montserrat'] font-semibold text-sm mt-auto">
+                Mehr erfahren
+              </button>
+            </motion.div>
+
+            {/* Card: Warmwasser-Reise */}
+            <motion.div initial={{
+            opacity: 0,
+            y: isMobile ? 10 : 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: isMobile ? 0.2 : 0.6,
+            delay: isMobile ? 0 : 0.2
+          }} className="bg-white rounded-2xl p-8 shadow-lg border border-[#4d83a4]/20 hover:shadow-xl transition-all duration-300 flex flex-col">
+              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Warmwasser-Atemreise</h4>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Fortgeschrittene</p>
+              <div className="text-center mb-4">
+                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">Auf Anfrage</p>
+                <p className="text-sm text-[#6B6560] font-['Montserrat']">Variabel</p>
+              </div>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">Besonders kraftvoll; im 35-36°C warmen Pool oder Badewanne<br /></p>
+              <button onClick={() => scrollToSection('warmwasser-detail')} className="w-full px-6 py-2.5 border-2 border-[#4d83a4] text-[#4d83a4] rounded-full hover:bg-[#4d83a4] hover:text-white transition-all duration-300 font-['Montserrat'] font-semibold text-sm mt-auto">
+                Mehr erfahren
+              </button>
+            </motion.div>
+
+            {/* Card: Coaching für Kids */}
+            <motion.div initial={{
+            opacity: 0,
+            y: isMobile ? 10 : 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: isMobile ? 0.2 : 0.6,
+            delay: isMobile ? 0 : 0.3
+          }} className="bg-white rounded-2xl p-8 shadow-lg border border-[#4d83a4]/20 hover:shadow-xl transition-all duration-300 flex flex-col">
+              <h4 className="font-['Playfair_Display'] text-2xl font-medium text-[#4A4440] mb-3 text-center">Coaching <br />für Kids</h4>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] mb-4 text-center">Kinder/Jugendliche<br /></p>
+              <div className="text-center mb-4">
+                <p className="text-3xl font-light text-[#4d83a4] font-['Playfair_Display']">90 CHF</p>
+                <p className="text-sm text-[#6B6560] font-['Montserrat']">60 Min.</p>
+              </div>
+              <p className="text-sm text-[#6B6560] font-['Montserrat'] text-center leading-relaxed mb-6 flex-grow">
+                Hilfe bei Stress, Ängsten & Konzentration
+              </p>
+              <button onClick={() => scrollToSection('kids-detail')} className="w-full px-6 py-2.5 border-2 border-[#4d83a4] text-[#4d83a4] rounded-full hover:bg-[#4d83a4] hover:text-white transition-all duration-300 font-['Montserrat'] font-semibold text-sm mt-auto">
+                Mehr erfahren
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Recommendation Footer */}
+          <motion.div {...fadeInUp} className="bg-[#4d83a4]/5 rounded-2xl p-6 text-center border border-[#4d83a4]/20">
+            <p className="text-[#6B6560] font-['Montserrat'] text-base">
+              <span className="font-semibold">Empfehlung:</span> Für eine nachhaltige Transformation empfehle ich eine Serie von etwa{' '}
+              <span className="font-semibold text-[#4d83a4]">sieben Einzelsitzungen</span>.
+            </p>
+          </motion.div>
         </div>
       </section>
 
