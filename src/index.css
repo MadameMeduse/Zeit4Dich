@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Montserrat:wght@400&display=swap');
 @import 'tailwindcss';
-
+@plugin "@tailwindcss/typography";
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -8,7 +8,7 @@
 /* Custom Wellness Color Palette */
 @layer utilities {
   /* Primary Brand Color: #4d83a4 */
-  .bg-primary-brand { background-color: #4d83a4; }
+  .bg-primary-brand { background-color: #c9c4ba; }
   .text-primary-brand { color: #4d83a4; }
   .border-primary-brand { border-color: #4d83a4; }
   .hover\:bg-primary-brand:hover { background-color: #3d6a85; }

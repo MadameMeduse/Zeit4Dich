@@ -319,8 +319,9 @@ export const ARTICLE_DB: Record<string, ArticleData> = {
     thumbnail: 'images/arrive.webp',
     heroImage: 'images/arrive.webp',
     content: `
-      <h2>Die Kunst des Ankommens</h2>
-      <p>Liebe Seele, heute möchte ich mit dir über etwas sprechen, das mir in letzter Zeit besonders am Herzen liegt: die Kunst des Ankommens. Nicht das physische Ankommen an einem Ort, sondern das tiefe, innere Ankommen im gegenwärtigen Moment.</p>
+    <h2>Liebe Seele, <h2/>
+  
+      <p>Heute möchte ich mit dir über etwas sprechen, das mir in letzter Zeit besonders am Herzen liegt: die Kunst des Ankommens. Nicht das physische Ankommen an einem Ort, sondern das tiefe, innere Ankommen im gegenwärtigen Moment.</p>
       
       <h3>Wo bist du gerade?</h3>
       <p>Ich meine damit nicht deinen geografischen Standort. Ich meine: Wo ist dein Geist gerade? Ist er hier, in diesem Moment, oder schweift er umher – in der Vergangenheit, die du nicht ändern kannst, oder in der Zukunft, die noch nicht existiert?</p>
