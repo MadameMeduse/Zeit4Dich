@@ -8,7 +8,7 @@ const Logo = () => (
   <img 
     width="80" 
     height="80" 
-    src="images/Zeit4Dich_Logo.png" 
+    src="images/logo.png" 
     alt="Zeit Für Dich Logo" 
     className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-contain" 
   />
