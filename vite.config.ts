@@ -5,12 +5,15 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Add this line:
-  base: '/Zeit4Dich/', 
+  // This ensures assets are loaded from https://zeit4dich.ch/ instead of a subfolder
+  base: '/', 
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    outDir: 'dist', // Vite's default build folder
+  }
 });
