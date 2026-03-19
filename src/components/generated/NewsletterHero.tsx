@@ -19,8 +19,9 @@ export default function NewsletterHero({ onNavigate }: NewsletterHeroProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
+    // 1. Basic Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setErrorMessage('Bitte gib eine gültige E-Mail-Adresse ein.');
       setState('error');
@@ -31,21 +32,29 @@ export default function NewsletterHero({ onNavigate }: NewsletterHeroProps) {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/subscribe', {
+      // 2. Point to the PHP file in public/dist folder
+      const response = await fetch('/subscribe.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify({ email })
       });
       
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data.status === 'success') {
+        // 3. Handle Success
         setState('success');
         setEmail('');
       } else {
-        const data = await response.json();
+        // 4. Handle Server Errors (e.g., MailerLite rejected the email)
         setState('error');
         setErrorMessage(data.message || 'Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
       }
     } catch (error) {
+      // 5. Handle Network Errors
       setState('error');
       setErrorMessage('Verbindungsfehler. Bitte überprüfe deine Internetverbindung.');
     }
