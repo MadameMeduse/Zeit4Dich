@@ -1,0 +1,9 @@
+<Files "subscribe.php">
+    <Limit GET POST>
+        Order allow,deny
+        Allow from all
+    </Limit>
+</Files>
+
+# Ensure PHP is handled correctly
+AddHandler php-script .php
