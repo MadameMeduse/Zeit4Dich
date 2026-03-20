@@ -1,3 +1,10 @@
+# Ensure JavaScript files are served with the correct MIME type
+AddType application/javascript .js
+AddType application/javascript .mjs
+
+# Optional: Fix for CSS if it also shows MIME errors
+AddType text/css .css
+
 <Files "subscribe.php">
     <Limit GET POST>
         Order allow,deny
