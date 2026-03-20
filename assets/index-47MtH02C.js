@@ -386,7 +386,7 @@ Error generating stack: `+n.message+`
         <h4>Schlusswort</h4>
         <p>Diese kurze Übung kannst du im Privatleben in Konflikten und Unklarheiten zwischen Familienmitgliedern oder auch im beruflichen Atmosphäre jederzeit einsetzen. Wenn du das regularly übst, wird deine Ruhe und Präsenz zum Standard-Signal, das automatisch Einfluss nimmt – ohne dass du kämpfen musst. Konflikte verlieren an Schwere, Flüsse von Energie in dir werden sanft reguliert.</p>
       </footer>
-    `},d3:{id:"d3",title:"Realitätsgestaltung",subtitle:"Die Realität aus der eigenen Mitte gestalten",excerpt:"Verbindung von Atemarbeit und schöpferischer Manifestation.",category:"lifestyle",categoryLabel:"Lifestyle",date:"14. Dez 2025",thumbnail:"images/reality.png",heroImage:"images/reality.png",content:`
+    `},d3:{id:"d3",title:"Realitätsgestaltung",subtitle:"Die Realität aus der eigenen Mitte gestalten",excerpt:"Verbindung von Atemarbeit und schöpferischer Manifestation.",category:"lifestyle",categoryLabel:"Lifestyle",date:"14. Dez 2025",thumbnail:"images/reality.webp",heroImage:"images/reality.webp",content:`
       <h2>Realitätsgestaltung</h2>
       <p>Das ist eine feine, ganzheitliche Verbindung von Atemarbeit, Bewusstseinslenkung und schöpferischer Manifestation — eine Praxis, die tief wirkt, weil sie Körper, Energie und Geist vereint.</p>
       
