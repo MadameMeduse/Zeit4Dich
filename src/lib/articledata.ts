@@ -265,8 +265,8 @@ export const ARTICLE_DB: Record<string, ArticleData> = {
     category: 'lifestyle',
     categoryLabel: 'Lifestyle',
     date: '14. Dez 2025',
-    thumbnail: 'images/reality.png',
-    heroImage: 'images/reality.png',
+    thumbnail: 'images/reality.webp',
+    heroImage: 'images/reality.webp',
     content: `
       <h2>Realitätsgestaltung</h2>
       <p>Das ist eine feine, ganzheitliche Verbindung von Atemarbeit, Bewusstseinslenkung und schöpferischer Manifestation — eine Praxis, die tief wirkt, weil sie Körper, Energie und Geist vereint.</p>
