@@ -18,7 +18,8 @@ const testimonials: Testimonial[] = [
   { id: '3', quote: 'Die Atemsessions waren unglaublich entspannend und haben mir sehr geholfen, mehr Ruhe und Gelassenheit in meinen Alltag zu bringen. Durch die liebevolle und klare Anleitung fiel es mir leicht, loszulassen...', author: 'Aida', location: 'Zahnärztin', sessionType: 'Sept 2025' },
   { id: '4', quote: 'Die Massage war einfach unglaublich. Dieses tiefe Gefühl von Entspannung und Wohltat habe ich so bisher bei keinem anderen Masseur erlebt... Tina weiss genau, was sie tut.', author: 'Benjamin', location: 'Bauleiter', sessionType: 'Nov 2025' },
   { id: '5', quote: 'Seit einigen Jahren bin ich regelmässig bei Tina zur Massage... Sie massiert nicht einfach, sondern sie ist in Resonanz mit dem Körper und macht genau das, was dem Körper gerade gut tut.', author: 'Karl', location: 'Unternehmer', sessionType: 'Dez 2025' },
-  { id: '6', quote: '30 Min gezieltes Kneten verspannter Muskelpartien um mein Schultergelenk erlöste mich von nächtlichen Beschwerden. Sie kennt sich auch mit Dehnübungen aus.', author: 'Johann', location: 'Jan 2026' }
+  { id: '6', quote: '30 Min gezieltes Kneten verspannter Muskelpartien um mein Schultergelenk erlöste mich von nächtlichen Beschwerden. Sie kennt sich auch mit Dehnübungen aus.', author: 'Johann', location: 'Jan 2026' },
+  { id: '7', quote: 'Thank you a lot! Today i feel much better than yesterday. You have a creator given gift, of course you also worked on it, to screen peoples bodies for their incongruity. But further more i feel also your ability to connect to mind and soul, This helps to trust and release for a 100%. Thank you! ', author: 'Jürg', location: 'Apr 2026' }
 ];
 
 export const TestimonialsSection: React.FC = () => {
