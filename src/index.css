@@ -252,14 +252,14 @@
   text-overflow: ellipsis;
   text-align: center;
   width: 100%;
-  font-size: inherit;
+  font-size: 1.125rem;
   line-height: inherit;
   margin: 0;
 }
 
 @media (min-width: 640px) {
   .testimonial-quote-frame {
-    font-size: 1.5rem;
+    font-size: 1rem;
     height: calc(1.625em * 3);
     min-height: calc(1.625em * 3);
     max-height: calc(1.625em * 3);

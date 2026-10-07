@@ -231,13 +231,13 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32 bg-white overflow-hidden">
+    <section id="testimonials" className="py-8 sm:py-24 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         <motion.header
           initial={reducedMotion ? false : { opacity: 0, y: 20 }}
           whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 sm:mb-24"
+          className="text-center sm:mb-5"
         >
           <h2
             className="text-[#4d83a4] font-['Playfair_Display'] font-bold tracking-tight mb-4"
@@ -256,7 +256,7 @@ export const TestimonialsSection: React.FC = () => {
           onFocusCapture={handleFocusCapture}
           onBlurCapture={handleBlurCapture}
         >
-          <div ref={trackRef} className="relative flex items-stretch">
+          <div ref={trackRef} className="relative overflow-hidden rounded-[3rem]">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -277,46 +277,16 @@ export const TestimonialsSection: React.FC = () => {
               </motion.div>
             </AnimatePresence>
 
-            <div className="hidden lg:block">
-              <button
-                type="button"
-                onClick={goToPrev}
-                className="testimonial-nav absolute -left-20 top-1/2 -translate-y-1/2 p-4 text-[#4d83a4] hover:bg-[#4d83a4]/5 rounded-full transition-colors"
-              >
-                <ChevronLeft size={32} strokeWidth={1} />
-              </button>
-              <button
-                type="button"
-                onClick={goToNext}
-                className="testimonial-nav absolute -right-20 top-1/2 -translate-y-1/2 p-4 text-[#4d83a4] hover:bg-[#4d83a4]/5 rounded-full transition-colors"
-              >
-                <ChevronRight size={32} strokeWidth={1} />
-              </button>
-            </div>
+            {([
+              ['prev', goToPrev],
+              ['next', goToNext],
+            ] as const).map(([direction, onClick]) => (
+              <SlideArrow key={direction} direction={direction} onClick={onClick} />
+            ))}
           </div>
 
-          <div className="mt-12 flex flex-col items-center gap-8">
-            <div className="flex gap-3">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => goTo(idx, idx > currentIndex ? 1 : -1)}
-                  className={`testimonial-nav h-1.5 rounded-full ${
-                    idx === currentIndex ? 'w-8 bg-[#4d83a4]' : 'w-2 bg-[#4d83a4]/20'
-                  } ${reducedMotion ? '' : 'transition-all duration-500'}`}
-                />
-              ))}
-            </div>
-
-            <div className="flex lg:hidden gap-10">
-              <button type="button" onClick={goToPrev} className="testimonial-nav text-[#4d83a4]">
-                <ChevronLeft size={28} />
-              </button>
-              <button type="button" onClick={goToNext} className="testimonial-nav text-[#4d83a4]">
-                <ChevronRight size={28} />
-              </button>
-            </div>
+          <div className="mt-12 flex justify-center">
+            <SlideDots index={currentIndex} total={testimonials.length} />
           </div>
         </div>
       </div>
@@ -333,6 +303,47 @@ export const TestimonialsSection: React.FC = () => {
     </section>
   );
 };
+
+function SlideArrow({
+  direction,
+  onClick,
+}: {
+  direction: 'prev' | 'next';
+  onClick: () => void;
+}) {
+  const previous = direction === 'prev';
+  const Icon = previous ? ChevronLeft : ChevronRight;
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={previous ? 'Previous testimonial' : 'Next testimonial'}
+      className={`absolute top-0 bottom-0 z-20 flex w-11 cursor-pointer items-center justify-center bg-transparent text-[#4d83a4] transition-colors motion-reduce:transition-none hover:bg-[#4d83a4]/10 active:bg-[#4d83a4]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4d83a4] focus-visible:[outline-offset:-4px] sm:w-16 ${
+        previous ? 'left-0' : 'right-0'
+      }`}
+    >
+      <Icon className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1} aria-hidden="true" />
+    </button>
+  );
+}
+
+function SlideDots({ index, total }: { index: number; total: number }) {
+  const active = index === 0 ? 0 : index === total - 1 ? 2 : 1;
+
+  return (
+    <div className="flex h-1.5 w-[4.5rem] items-center gap-3" aria-hidden="true">
+      {[0, 1, 2].map((position) => (
+        <span
+          key={position}
+          className={`h-1.5 rounded-full transition-all duration-500 motion-reduce:transition-none ${
+            position === active ? 'w-8 bg-[#4d83a4]' : 'w-2 bg-[#4d83a4]/20'
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
 
 function TestimonialCard({
   item,
@@ -372,8 +383,8 @@ function TestimonialCard({
   }, [item.id]);
 
   return (
-    <div className="bg-[#4d83a4]/5 rounded-[3rem] p-10 sm:p-16 relative">
-      <Quote className="absolute top-10 left-10 text-[#4d83a4]/10 w-16 h-16 -z-0" />
+    <div className="relative rounded-[3rem] bg-[#4d83a4]/5 px-14 py-10 sm:px-20 sm:py-16">
+      <Quote className="absolute top-10 left-14 sm:left-20 text-[#4d83a4]/10 w-16 h-16 -z-0" />
 
       <blockquote className="relative z-10 flex flex-col">
         <div className="testimonial-quote-frame">
@@ -400,7 +411,7 @@ function TestimonialCard({
             className="testimonial-nav text-[#4d83a4] font-['Montserrat'] text-sm tracking-wide uppercase hover:text-[#2c4b5e] transition-colors"
             style={{ visibility: isTruncated ? 'visible' : 'hidden' }}
           >
-            Read more
+            Mehr lesen
           </button>
         </div>
 
