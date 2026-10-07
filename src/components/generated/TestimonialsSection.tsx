@@ -232,13 +232,7 @@ export const TestimonialsSection: React.FC = () => {
 
   return (
     <section id="testimonials" className="py-8 sm:py-24 bg-white overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.header
-          initial={reducedMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center sm:mb-5"
-        >
+      <div className="text-center sm:mb-5 max-w-5xl mx-auto px-6">
           <h2
             className="text-[#4d83a4] font-['Playfair_Display'] font-bold tracking-tight mb-4"
             style={{ fontSize: 'clamp(30px, 4vw, 45px)' }}
@@ -246,8 +240,6 @@ export const TestimonialsSection: React.FC = () => {
             STIMMEN & ERFAHRUNGEN
           </h2>
           <div className="h-1 w-20 bg-[#4d83a4]/20 mx-auto rounded-full" />
-        </motion.header>
-
         <div
           className="relative"
           onPointerEnter={handlePointerEnter}
